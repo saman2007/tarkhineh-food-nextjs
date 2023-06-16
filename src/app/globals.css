@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .font-display-1 {
+        @apply font-bold text-[64px] leading-[140%]
+    }
+
+    .font-display-2 {
+        @apply font-bold text-[56px] leading-[120%]
+    }
+
+    .font-header-1 {
+        @apply font-bold text-[44px] leading-[140%]
+    }
+
+    .font-header-2 {
+        @apply font-bold text-[40px] leading-[140%]
+    }
+
+    .font-header-3 {
+        @apply font-bold text-[32px] leading-[140%]
+    }
+
+    .font-header-4 {
+        @apply font-bold text-[24px] leading-[140%]
+    }
+
+    .font-header-5 {
+        @apply font-bold text-[20px] leading-[140%]
+    }
+
+    .font-header-6 {
+        @apply font-bold text-[16px] leading-[140%]
+    }
+
+    .font-header-7 {
+        @apply font-semibold text-[20px] leading-[180%]
+    }
+
+    .font-body-xl {
+        @apply font-normal text-[20px] leading-[180%]
+    }
+
+    .font-body-lg {
+        @apply font-normal text-[18px] leading-[180%]
+    }
+
+    .font-body-md {
+        @apply font-normal text-[16px] leading-[180%]
+    }
+
+    .font-body-sm {
+        @apply font-normal text-[14px] leading-[180%]
+    }
+
+    .font-caption-sm {
+        @apply font-normal text-[10px] leading-[180%]
+    }
+
+    .font-caption-md {
+        @apply font-normal text-[12px] leading-[180%]
+    }
+
+    .font-caption-lg {
+        @apply font-medium text-[14px] leading-[180%]
+    }
+
+    .font-button-sm {
+        @apply font-medium text-[14px] leading-[24px]
+    }
+
+    .font-button-lg {
+        @apply font-medium text-[16px] leading-[180%]
+    }
+
+    .font-overline-sm {
+        @apply font-bold text-[12px] leading-[21px]
+    }
+
+    .font-overline-lg {
+        @apply font-normal text-[16px] leading-[180%]
+    }
+}
