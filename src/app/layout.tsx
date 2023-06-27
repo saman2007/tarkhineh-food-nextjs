@@ -1,5 +1,8 @@
-import { optimizedFonts } from "@/utilities/fonts";
 import "./globals.css";
+import { optimizedFonts } from "@/utilities/fonts";
+import Header from "@/components/Header/Header";
+import BackdropContext from "@/contexts/BackdropContext";
+import "react-aspect-ratio/aspect-ratio.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,9 +15,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${optimizedFonts.variable} w-full h-full`}>
-      <body className="font-estedad font-body-xl w-full h-full">
-        {children}
+    <html
+      lang="fa"
+      dir="rtl"
+      className={`${optimizedFonts.variable} w-full h-full`}
+    >
+      <body className="font-estedad font-body-sm sm:font-body-md md:font-body-lg lg:font-body-xl w-full h-full">
+        <div id="modal-root"></div>
+        <BackdropContext>
+          <Header />
+          {children}
+        </BackdropContext>
       </body>
     </html>
   );
