@@ -1,5 +1,5 @@
 import { HeaderTextProps } from "@/components/Header/HeaderText/HeaderText";
-import { MobileMenuItem } from "@/components/Header/NavigationItems/NavigationItem";
+import { MobileMenuItem } from "@/global/types/types";
 import {
   CallCalling,
   Home,

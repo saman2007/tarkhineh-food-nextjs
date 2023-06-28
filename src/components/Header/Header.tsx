@@ -1,21 +1,11 @@
-import {
-  User,
-  ShoppingCart,
-  SearchNormal1,
-  Home,
-  MenuBoard,
-  HomeHashtag,
-  Profile2User,
-  CallCalling,
-} from "iconsax-react";
+import { User, ShoppingCart, SearchNormal1 } from "iconsax-react";
 import IconChip from "../IconChip/IconChip";
 import Container from "../Container/Container";
-import HeaderText, { HeaderTextProps } from "./HeaderText/HeaderText";
+import HeaderText from "./HeaderText/HeaderText";
 import Logo from "./Logo/Logo";
 import Link from "../Link/Link";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
-import { MobileMenuItem } from "./NavigationItems/NavigationItem";
-import { desktopMenuItems, mobileMenuItems } from "@/data/headerItems";
+import { desktopMenuItems } from "@/data/headerItems";
 
 type IconChipType = { icon: React.ReactNode; hideOnMd?: boolean }[];
 

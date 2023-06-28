@@ -3,16 +3,7 @@ import Link from "@/components/Link/Link";
 import { ArrowDown2, Icon } from "iconsax-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-
-export type MobileMenuItem = (
-  | {
-      hasSubMenu: true;
-      subMenus: { text: string; href: string }[];
-      href?: never;
-      Icon: Icon;
-    }
-  | { hasSubMenu?: never; subMenus?: never; href: string; Icon?: Icon }
-) & { text: string };
+import { MobileMenuItem } from "@/global/types/types";
 
 const NavigationItem = ({
   href,
