@@ -14,13 +14,27 @@ const iconChips: IconChipType = [
     icon: <SearchNormal1 size={24} className="text-primary" />,
     hideOnMd: true,
   },
-  { icon: <ShoppingCart size={24} className="text-primary" /> },
-  { icon: <User size={24} className="text-primary" /> },
+  {
+    icon: (
+      <ShoppingCart
+        size={24}
+        className="text-primary w-[16px] sd:w-[unset] h-[16px] sd:h-[unset]"
+      />
+    ),
+  },
+  {
+    icon: (
+      <User
+        size={24}
+        className="text-primary w-[16px] sd:w-[unset] h-[16px] sd:h-[unset]"
+      />
+    ),
+  },
 ];
 
 const Header = () => {
   return (
-    <header className="fixed p-16 right-0 left-0 h-[115px] gap-[39px] bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.15)]">
+    <header className="fixed z-10 p-16 right-0 left-0 h-[115px] gap-[39px] bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.15)]">
       <Container
         variant="lg"
         className="flex items-center justify-between h-full w-full"

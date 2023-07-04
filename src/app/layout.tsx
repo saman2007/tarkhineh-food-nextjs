@@ -3,6 +3,7 @@ import { optimizedFonts } from "@/utilities/fonts";
 import Header from "@/components/Header/Header";
 import BackdropContext from "@/contexts/BackdropContext";
 import "react-aspect-ratio/aspect-ratio.css";
+import Spacer from "@/components/Spacer/Spacer";
 
 export const metadata = {
   title: "Create Next App",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <div id="modal-root"></div>
         <BackdropContext>
           <Header />
+          <Spacer height={115} />
           {children}
         </BackdropContext>
       </body>

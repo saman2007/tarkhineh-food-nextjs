@@ -42,7 +42,7 @@ const NavigationMenu = () => {
         <AnimatePresence>
           {isNavOpen && (
             <motion.div
-              className="fixed right-0 z-10 top-0 bottom-0 bg-white w-[70%] md:hidden overflow-y-auto"
+              className="fixed right-0 z-20 top-0 bottom-0 bg-white w-[70%] md:hidden overflow-y-auto"
               ref={outsideRef}
               initial={{ right: "-70%" }}
               animate={{ right: 0 }}

@@ -36,7 +36,7 @@ const BackdropContext = ({ children }: Props) => {
   return (
     <backdropContext.Provider value={contextValue}>
       <div
-        className={`fixed right-0 left-0 z-[5] transition bg-[#00000099] duration-200 backdrop-blur-[3px] top-0 bottom-0 ${
+        className={`fixed right-0 left-0 z-[15] transition bg-[#00000099] duration-200 backdrop-blur-[3px] top-0 bottom-0 ${
           isBackdropOpen.isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
