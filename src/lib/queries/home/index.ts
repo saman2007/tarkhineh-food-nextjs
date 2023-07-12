@@ -1,7 +1,7 @@
 import { mysql } from "@/lib/db";
-import { SliderData } from "./interfaces";
+import { MenuData, SliderData } from "./interfaces";
 
-const getSliderSlides = async (): Promise<SliderData[]> => {
+const getSliderSlidesQuery = async (): Promise<SliderData[]> => {
   const slidesData = await mysql.query<SliderData[]>(
     "SELECT id, text, image, targetPage FROM slides"
   );
@@ -9,4 +9,12 @@ const getSliderSlides = async (): Promise<SliderData[]> => {
   return slidesData[0];
 };
 
-export { getSliderSlides };
+const getMenuQuery = async (): Promise<MenuData[]> => {
+  const menuData = await mysql.query<MenuData[]>(
+    "SELECT id, name, image, href FROM food_menu"
+  );
+
+  return menuData[0];
+};
+
+export { getSliderSlidesQuery, getMenuQuery };

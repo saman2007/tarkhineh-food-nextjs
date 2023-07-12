@@ -1,12 +1,11 @@
 import Link from "@/components/Link/Link";
+import { SliderData } from "@/lib/queries/home/interfaces";
 
-interface Props {
-  text: string;
-  image: string;
-  targetPage: string;
-}
-
-const HomeSlide = ({ image, targetPage, text }: Props) => {
+const HomeSlide = ({
+  image,
+  targetPage,
+  text,
+}: Pick<SliderData, "text" | "image" | "targetPage">) => {
   return (
     <div
       className="h-[176px] sd:h-[336px] bg-cover bg-center flex flex-col gap-y-[18px] sd:gap-y-[44px] justify-center items-center"
@@ -23,6 +22,7 @@ const HomeSlide = ({ image, targetPage, text }: Props) => {
         href={targetPage}
         width={184}
         className="hidden sd:flex"
+        radiusVariant={8}
       >
         سفارش آنلاین غذا
       </Link>
@@ -31,6 +31,7 @@ const HomeSlide = ({ image, targetPage, text }: Props) => {
         href={targetPage}
         width={91}
         height={24}
+        radiusVariant={8}
         className="flex sd:hidden"
       >
         سفارش آنلاین غذا

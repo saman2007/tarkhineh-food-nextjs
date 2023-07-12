@@ -7,4 +7,11 @@ interface SliderData extends RowDataPacket {
   targetPage: string;
 }
 
-export type { SliderData };
+interface MenuData extends RowDataPacket {
+  id: number;
+  name: string;
+  image: string;
+  href: string;
+}
+
+export type { SliderData, MenuData };
