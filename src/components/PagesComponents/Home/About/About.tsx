@@ -1,5 +1,4 @@
 import Container from "@/components/Container/Container";
-import Link from "@/components/Link/Link";
 import bg from "@/static/about-bg.png";
 import Image from "next/image";
 import RightSection from "./RightSection";

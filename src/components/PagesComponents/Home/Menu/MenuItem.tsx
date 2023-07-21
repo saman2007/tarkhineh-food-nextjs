@@ -28,6 +28,7 @@ const MenuItem = ({
           width={155}
           height={48}
           className="relative bottom-0 translate-y-[20px]"
+          colorVariant="primary"
         >
           {name}
         </Link>
@@ -40,6 +41,7 @@ const MenuItem = ({
           width={71}
           height={32}
           className="relative bottom-0 translate-y-[15px]"
+          colorVariant="primary"
         >
           {name}
         </Link>

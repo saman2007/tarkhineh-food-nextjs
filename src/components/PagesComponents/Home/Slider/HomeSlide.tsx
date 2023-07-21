@@ -23,6 +23,7 @@ const HomeSlide = ({
         width={184}
         className="hidden sd:flex"
         radiusVariant={8}
+        colorVariant="primary"
       >
         سفارش آنلاین غذا
       </Link>
@@ -33,6 +34,7 @@ const HomeSlide = ({
         height={24}
         radiusVariant={8}
         className="flex sd:hidden"
+        colorVariant="primary"
       >
         سفارش آنلاین غذا
       </Link>

@@ -25,6 +25,7 @@ const RightSection = () => {
             height={40}
             fontVariant="captionMdAndBtnLg"
             className="gap-x-[8px]"
+            colorVariant="secondary"
           >
             اطلاعات بیشتر
             <ArrowLeft2 size={24} />
@@ -38,6 +39,7 @@ const RightSection = () => {
             width={152}
             height={32}
             fontVariant="captionMdAndBtnLg"
+            colorVariant="secondary"
           >
             اطلاعات بیشتر
           </Link>
