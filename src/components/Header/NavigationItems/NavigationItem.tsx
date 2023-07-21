@@ -19,8 +19,13 @@ const NavigationItem = ({
 
   const parentClasses =
     "flex justify-between items-center text-gray-7 pb-4 sd:pb-8 hover:text-primary";
+
   const children = (
-    <div className="flex items-center gap-x-[4px] sd:gap-x-[8px]">
+    <div
+      className={`flex items-center gap-x-[4px] sd:gap-x-[8px] ${
+        subItemClassName ? "font-body-sm" : "font-body-md"
+      }`}
+    >
       {Icon && (
         <>
           <Icon size={16} className="color-gray-8 sd:hidden" />
@@ -74,7 +79,7 @@ const NavigationItem = ({
     <Link
       href={href}
       className={`${parentClasses} ${subItemClassName} ${
-        isUrlMatched ? "text-primary font-body-md " : "font-body-sm"
+        isUrlMatched ? "text-primary" : ""
       } border-b-[1px] border-b-gray-4`}
     >
       {children}

@@ -46,13 +46,17 @@ module.exports = {
       warning: "#A9791C",
       "warning-light": "#F4B740",
       "warning-extra-light": "#FFF8E1",
+      transparent: "transparent",
     },
     padding: {
       4: "4px",
       8: "8px",
+      12: "12px",
       16: "16px",
+      20: "20px",
       24: "24px",
       32: "32px",
+      48: "48px",
     },
     boxShadow: {
       2: "0px 2px 2px rgba(0, 0, 0, 0.25)",
