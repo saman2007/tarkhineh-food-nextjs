@@ -1,9 +1,9 @@
 import useMatchedUrl from "@/hooks/useMatchedUrl";
-import Link from "@/components/Link/Link";
-import { ArrowDown2, Icon } from "iconsax-react";
+import { ArrowDown2 } from "iconsax-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { MobileMenuItem } from "@/global/types/types";
+import Link from "@/Link/Link";
 
 const NavigationItem = ({
   href,

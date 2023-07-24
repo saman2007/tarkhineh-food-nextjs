@@ -1,6 +1,7 @@
 import { SVG } from "@/types/types";
+import { FC } from "react";
 
-const LgXIcon = (props: SVG) => (
+const LgXIcon: FC<SVG> = (props) => (
   <svg
     width={40}
     height={40}

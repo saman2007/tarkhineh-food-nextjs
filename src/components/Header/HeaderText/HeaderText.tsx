@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "@/components/Link/Link";
+import Link from "@/Link/Link";
 import useMatchedUrl from "@/hooks/useMatchedUrl";
 import { ArrowDown2 } from "iconsax-react";
 

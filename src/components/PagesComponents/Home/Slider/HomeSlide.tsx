@@ -1,4 +1,4 @@
-import Link from "@/components/Link/Link";
+import Link from "@/components/LinkButton/LinkButton";
 import { SliderData } from "@/lib/queries/home/interfaces";
 
 const HomeSlide = ({

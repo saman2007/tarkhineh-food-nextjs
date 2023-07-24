@@ -1,4 +1,4 @@
-import Link from "@/components/Link/Link";
+import ButtonLink from "@/components/LinkButton/LinkButton";
 import Responsive from "@/components/Responsive/Responsive";
 import { MenuData } from "@/lib/queries/home/interfaces";
 import Image from "next/image";
@@ -21,30 +21,30 @@ const MenuItem = ({
         />
       </div>
       <Responsive md lg fullLg>
-        <Link
+        <ButtonLink
           variant="fill"
           radiusVariant={4}
           href={href}
           width={155}
           height={48}
-          className="relative bottom-0 translate-y-[20px]"
+          className="relative block bottom-0 translate-y-[20px]"
           colorVariant="primary"
         >
           {name}
-        </Link>
+        </ButtonLink>
       </Responsive>
       <Responsive sm sd>
-        <Link
+        <ButtonLink
           variant="fill"
           radiusVariant={4}
           href={href}
           width={71}
           height={32}
-          className="relative bottom-0 translate-y-[15px]"
+          className="relative block bottom-0 translate-y-[15px]"
           colorVariant="primary"
         >
           {name}
-        </Link>
+        </ButtonLink>
       </Responsive>
     </div>
   );

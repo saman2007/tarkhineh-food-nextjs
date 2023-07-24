@@ -1,4 +1,4 @@
-import Link from "@/components/Link/Link";
+import Link from "@/components/LinkButton/LinkButton";
 import Responsive from "@/components/Responsive/Responsive";
 import { ArrowLeft2 } from "iconsax-react";
 

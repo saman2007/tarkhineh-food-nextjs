@@ -5,11 +5,9 @@ export interface AboutUsSectionItem {
   icon: Icon;
 }
 
-const aboutUsSectionItems: AboutUsSectionItem[] = [
+export const aboutUsSectionItems: AboutUsSectionItem[] = [
   { icon: Diagram, text: "کیفیت بالای غذاها" },
   { icon: User, text: "پرسنلی مجرب و حرفه‌ای" },
   { icon: MenuBoard, text: "منوی متنوع" },
   { icon: HomeWifi, text: "محیطی دلنشین و آرام" },
 ];
-
-export { aboutUsSectionItems };

@@ -3,9 +3,9 @@ import IconChip from "../IconChip/IconChip";
 import Container from "../Container/Container";
 import HeaderText from "./HeaderText/HeaderText";
 import Logo from "./Logo/Logo";
-import Link from "../Link/Link";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
 import { desktopMenuItems } from "@/data/headerItems";
+import Link from "@/Link/Link";
 
 type IconChipType = { icon: React.ReactNode; hideOnMd?: boolean }[];
 

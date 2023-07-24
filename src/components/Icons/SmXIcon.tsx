@@ -1,6 +1,7 @@
 import { SVG } from "@/types/types";
+import { FC } from "react";
 
-const XIcon = (props: SVG) => {
+const XIcon: FC<SVG> = (props) => {
   return (
     <svg
       width={24}
