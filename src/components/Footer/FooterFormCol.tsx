@@ -1,4 +1,4 @@
-import Button from "@/Button/Button";
+import Button from "@/components/Button/Button";
 import TextAreaUI from "../FormUI/TextAreaUI";
 import TextFieldUI from "../FormUI/TextFieldUI";
 
