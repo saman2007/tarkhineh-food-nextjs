@@ -6,6 +6,7 @@ import {
 } from "@/data/variants/Button";
 import { ButtonProps } from "@/global/interfaces/interfaces";
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+import LoadingIcon from "../Icons/LoadingIcon";
 
 interface Props
   extends ButtonProps,
@@ -24,6 +25,7 @@ const Button = ({
   colorVariant = "default",
   className,
   style,
+  isLoading = false,
   ...props
 }: Props) => {
   return (
@@ -40,7 +42,7 @@ const Button = ({
       }}
       {...props}
     >
-      {children}
+      {isLoading ? <LoadingIcon /> : children}
     </button>
   );
 };

@@ -18,6 +18,7 @@ export interface ButtonProps {
   colorVariant?: keyof typeof colorVariants;
   height?: string | number;
   width?: string | number;
+  isLoading?: boolean;
 }
 
 export interface CustomLinkProps
@@ -42,4 +43,8 @@ export interface TextFieldUIProps
   type?: "password" | "text";
   width?: string | number;
   height?: string | number;
+}
+
+export interface FormRHFProps {
+  name: string;
 }

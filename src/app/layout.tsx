@@ -5,6 +5,7 @@ import BackdropContext from "@/contexts/BackdropContext";
 import "react-aspect-ratio/aspect-ratio.css";
 import Spacer from "@/components/Spacer/Spacer";
 import Footer from "@/components/Footer/Footer";
+import ServerActionsSituationContext from "@/contexts/ServerActionsSituationContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -24,16 +25,18 @@ export default function RootLayout({
     >
       <body className="font-estedad font-body-sm sm:font-body-md md:font-body-lg lg:font-body-xl w-full h-full">
         <div id="modal-root"></div>
-        <BackdropContext>
-          <div className="flex flex-col justify-between">
-            <div>
-              <Header />
-              <Spacer height={115} />
-              {children}
+        <ServerActionsSituationContext>
+          <BackdropContext>
+            <div className="flex flex-col justify-between">
+              <div>
+                <Header />
+                <Spacer height={115} />
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        </BackdropContext>
+          </BackdropContext>
+        </ServerActionsSituationContext>
       </body>
     </html>
   );

@@ -1,12 +1,17 @@
 import { TextFieldUIProps } from "@/global/interfaces/interfaces";
+import { Ref, forwardRef } from "react";
 
-const TextFieldUI = ({
-  type = "text",
-  width = "auto",
-  height = "auto",
-  placeholder = "چیزی بنویسید...",
-  className = "",
-}: TextFieldUIProps) => {
+const TextFieldUI = (
+  {
+    type = "text",
+    width = "auto",
+    height = "auto",
+    placeholder = "چیزی بنویسید...",
+    className = "",
+    ...props
+  }: TextFieldUIProps,
+  ref: Ref<HTMLInputElement>
+) => {
   return (
     <input
       type={type}
@@ -16,8 +21,10 @@ const TextFieldUI = ({
         width: typeof width === "number" ? width + "px" : width,
       }}
       placeholder={placeholder}
+      ref={ref}
+      {...props}
     />
   );
 };
 
-export default TextFieldUI;
+export default forwardRef<HTMLInputElement, TextFieldUIProps>(TextFieldUI);
