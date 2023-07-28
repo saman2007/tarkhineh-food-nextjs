@@ -1,9 +1,8 @@
-import { HeaderTextProps } from "@/components/Header/HeaderText/HeaderText";
-import { MobileMenuItem } from "@/global/types/types";
 import {
   CallCalling,
   Home,
   HomeHashtag,
+  Icon,
   MenuBoard,
   Profile2User,
 } from "iconsax-react";
@@ -24,9 +23,27 @@ import {
   VANAK_BRANCH_ROUTE,
 } from "./routes";
 
-type DesktopMenuItems = HeaderTextProps[];
+type Link = { text: string; href: string };
+type SubMenu =
+  | {
+      hasSubMenu: true;
+      subMenus: { text: string; href: string }[];
+    }
+  | { hasSubMenu?: never; subMenus?: never };
 
-export const mobileMenuItems: MobileMenuItem[] = [
+export type HeaderTextData = Link & SubMenu;
+
+export type MobileMenuData = (
+  | {
+      hasSubMenu: true;
+      subMenus: { text: string; href: string }[];
+      href?: never;
+      Icon: Icon;
+    }
+  | { hasSubMenu?: never; subMenus?: never; href: string; Icon?: Icon }
+) & { text: string };
+
+export const mobileMenuData: MobileMenuData[] = [
   {
     text: "صفحه اصلی",
     href: HOME_ROUTE,
@@ -66,7 +83,7 @@ export const mobileMenuItems: MobileMenuItem[] = [
   },
 ];
 
-export const desktopMenuItems: DesktopMenuItems = [
+export const desktopMenuData: HeaderTextData[] = [
   {
     text: "صفحه اصلی",
     href: HOME_ROUTE,

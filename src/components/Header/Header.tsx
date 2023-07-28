@@ -4,7 +4,7 @@ import Container from "../Container/Container";
 import HeaderText from "./HeaderText/HeaderText";
 import Logo from "./Logo/Logo";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
-import { desktopMenuItems } from "@/data/headerItems";
+import { desktopMenuData } from "@/data/headerData";
 import Link from "@/Link/Link";
 
 type IconChipType = { icon: React.ReactNode; hideOnMd?: boolean }[];
@@ -44,7 +44,7 @@ const Header = () => {
           <Logo className="fill-primary" />
         </Link>
         <div className="gap-x-[24px] hidden md:flex">
-          {desktopMenuItems.map((data, key) => (
+          {desktopMenuData.map((data, key) => (
             <HeaderText key={key} {...data} />
           ))}
         </div>

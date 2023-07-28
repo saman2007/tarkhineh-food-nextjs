@@ -1,4 +1,4 @@
-import { BranchItem } from "@/data/BranchItems";
+import { BranchData } from "@/data/branchesData";
 import BranchImg from "./BranchImg";
 import BranchItemContainer from "./BranchItemContainer";
 import BranchLinkContainer from "./BranchLinkContainer";
@@ -12,7 +12,7 @@ const BranchItem = ({
   href,
   address,
   smallImage,
-}: BranchItem) => {
+}: BranchData) => {
   return (
     <BranchItemContainer href={href}>
       <Link

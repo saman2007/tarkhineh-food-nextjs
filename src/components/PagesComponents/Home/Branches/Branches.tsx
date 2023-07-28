@@ -1,8 +1,8 @@
-import { branchItems } from "@/data/BranchItems";
+import { branchesData } from "@/data/branchesData";
 import BranchItem from "./BranchItem";
 
 const Branches = () => {
-  const branches = branchItems.map((data, index) => (
+  const branches = branchesData.map((data, index) => (
     <BranchItem {...data} key={index} />
   ));
 

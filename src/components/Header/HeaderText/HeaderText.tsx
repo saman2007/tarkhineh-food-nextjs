@@ -1,20 +1,11 @@
 "use client";
 
 import Link from "@/Link/Link";
+import { HeaderTextData } from "@/data/headerData";
 import useMatchedUrl from "@/hooks/useMatchedUrl";
 import { ArrowDown2 } from "iconsax-react";
 
-type Link = { text: string; href: string };
-type SubMenu =
-  | {
-      hasSubMenu: true;
-      subMenus: { text: string; href: string }[];
-    }
-  | { hasSubMenu?: never; subMenus?: never };
-
-type Props = Link & SubMenu;
-
-const HeaderText = ({ text, hasSubMenu, href, subMenus }: Props) => {
+const HeaderText = ({ text, hasSubMenu, href, subMenus }: HeaderTextData) => {
   const isUrlMatched = useMatchedUrl(href);
 
   return (
@@ -65,5 +56,4 @@ const HeaderText = ({ text, hasSubMenu, href, subMenus }: Props) => {
   );
 };
 
-export type { Props as HeaderTextProps, SubMenu, Link };
 export default HeaderText;

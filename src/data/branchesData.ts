@@ -7,7 +7,7 @@ import eghdisiyeSmallImg from "@/static/eghdisiye-branch-large.png";
 import chaloosSmallImg from "@/static/chaloos-branch-small.png";
 import ekbatanSmallImg from "@/static/ekbatan-branch-small.png";
 
-export interface BranchItem {
+export interface BranchData {
   name: string;
   address: string;
   href: string;
@@ -15,7 +15,7 @@ export interface BranchItem {
   smallImage: string;
 }
 
-export const branchItems: BranchItem[] = [
+export const branchesData: BranchData[] = [
   {
     name: "شعبه اکباتان",
     address: "شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم",

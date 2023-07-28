@@ -1,8 +1,8 @@
-import { aboutUsSectionItems } from "@/data/aboutUsSectionItems";
+import { aboutUsSectionData } from "@/data/aboutUsSectionData";
 import ItemBox from "./ItemBox";
 
 const LeftSection = () => {
-  const items = aboutUsSectionItems.map((data) => (
+  const items = aboutUsSectionData.map((data) => (
     <ItemBox {...data} key={data.text} />
   ));
   return (

@@ -18,16 +18,16 @@ import TelegramIcon from "@/components/Icons/TelegramIcon";
 
 export interface Footer {
   title: string;
-  items: FooterItem[];
-  icons?: FooterIconItem[];
+  items: FoterData[];
+  icons?: FooterIconData[];
 }
 
-export interface FooterItem {
+export interface FoterData {
   text: string;
   href: string;
 }
 
-export interface FooterIconItem {
+export interface FooterIconData {
   icon: FC<SVG>;
   href: string;
 }

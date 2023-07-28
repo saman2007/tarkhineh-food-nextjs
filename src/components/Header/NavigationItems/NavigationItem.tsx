@@ -2,8 +2,8 @@ import useMatchedUrl from "@/hooks/useMatchedUrl";
 import { ArrowDown2 } from "iconsax-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MobileMenuItem } from "@/global/types/types";
 import Link from "@/Link/Link";
+import { MobileMenuData } from "@/data/headerData";
 
 const NavigationItem = ({
   href,
@@ -12,7 +12,7 @@ const NavigationItem = ({
   hasSubMenu,
   subMenus,
   subItemClassName,
-}: MobileMenuItem & { subItemClassName?: string }) => {
+}: MobileMenuData & { subItemClassName?: string }) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const isUrlMatched = useMatchedUrl(href || "");

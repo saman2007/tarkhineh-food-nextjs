@@ -12,7 +12,7 @@ import LgXIcon from "@/components/Icons/LgXIcon";
 import Logo from "../Logo/Logo";
 import SmLogo from "../Logo/SmLogo";
 import NavigationItem from "../NavigationItems/NavigationItem";
-import { mobileMenuItems } from "@/data/headerItems";
+import { mobileMenuData } from "@/data/headerData";
 
 const NavigationMenu = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -67,7 +67,7 @@ const NavigationMenu = () => {
                 </div>
               </AspectRatio>
               <div className="w-full flex flex-col gap-[8px] sd:gap-[16px] p-16 z-10 relative">
-                {mobileMenuItems.map((props, index) => (
+                {mobileMenuData.map((props, index) => (
                   <NavigationItem key={index} {...props} />
                 ))}
               </div>

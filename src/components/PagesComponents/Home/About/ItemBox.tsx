@@ -1,7 +1,7 @@
 import Responsive from "@/components/Responsive/Responsive";
-import { AboutUsSectionItem } from "@/data/aboutUsSectionItems";
+import { AboutUsSectionData } from "@/data/aboutUsSectionData";
 
-const ItemBox = ({ text, icon: Icon }: AboutUsSectionItem) => {
+const ItemBox = ({ text, icon: Icon }: AboutUsSectionData) => {
   return (
     <div
       key={text}

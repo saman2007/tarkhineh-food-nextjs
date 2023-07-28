@@ -1,13 +1,9 @@
 import ButtonLink from "@/components/LinkButton/LinkButton";
 import Responsive from "@/components/Responsive/Responsive";
-import { MenuData } from "@/lib/queries/home/interfaces";
+import { MenuData } from "@/data/menuData";
 import Image from "next/image";
 
-const MenuItem = ({
-  name,
-  image,
-  href,
-}: Pick<MenuData, "name" | "image" | "href">) => {
+const MenuItem = ({ name, image, href }: MenuData) => {
   return (
     <div className="flex relative mx-auto w-[152px] sd:w-[280px] group flex-col items-center justify-between">
       <div className="w-[152px] sd:w-[280px] absolute bottom-0 flex-col transition duration-200 h-[81px] sd:h-[180px] group-hover:shadow-card-shadow gap-[22px] justify-end gap-y-[37px] flex items-center rounded-8 border border-primary"></div>
