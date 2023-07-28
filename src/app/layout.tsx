@@ -1,11 +1,13 @@
 import "./globals.css";
+import "react-aspect-ratio/aspect-ratio.css";
+import "react-toastify/dist/ReactToastify.css";
 import { optimizedFonts } from "@/utilities/fonts";
 import Header from "@/components/Header/Header";
 import BackdropContext from "@/contexts/BackdropContext";
-import "react-aspect-ratio/aspect-ratio.css";
 import Spacer from "@/components/Spacer/Spacer";
 import Footer from "@/components/Footer/Footer";
 import ServerActionsSituationContext from "@/contexts/ServerActionsSituationContext";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Create Next App",
@@ -27,6 +29,13 @@ export default function RootLayout({
         <div id="modal-root"></div>
         <ServerActionsSituationContext>
           <BackdropContext>
+            <ToastContainer
+              position="top-right"
+              bodyStyle={{ direction: "rtl" }}
+              bodyClassName="font-body-md"
+              className="max-[480px]:!right-[10px] max-[480px]:!left-[10px] max-[480px]:!top-[10px] max-[480px]:!w-[unset]"
+              toastClassName="max-[480px]:!rounded-4"
+            />
             <div className="flex flex-col justify-between">
               <div>
                 <Header />

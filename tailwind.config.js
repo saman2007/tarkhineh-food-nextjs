@@ -8,7 +8,14 @@ module.exports = {
     "./src/data/variants/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        sm: "360px",
+        sd: "456px",
+        md: "1024px",
+        lg: "1440px",
+      },
+    },
     fontFamily: {
       estedad: ["var(--font-estedad)"],
     },
@@ -78,12 +85,6 @@ module.exports = {
       24: "24px",
       32: "32px",
       64: "64px",
-    },
-    screens: {
-      sm: "360px",
-      sd: "456px",
-      md: "1024px",
-      lg: "1440px",
     },
   },
   plugins: [],

@@ -6,6 +6,7 @@ import { UserMessage } from "@/lib/queries/global/interfaces";
 import { submitUserMessageSchema } from "@/utilities/validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormProvider, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 interface Props {
   children: React.ReactNode;
@@ -14,7 +15,15 @@ interface Props {
 const FooterFormColProvider = ({ children }: Props) => {
   const { serverAction } = useServerAction<UserMessage>(
     "userMsg",
-    insertUserMessage
+    insertUserMessage,
+    () => {
+      toast("پیام شما با موفقیت ثبت شد!", { type: "success" });
+    },
+    () => {
+      toast("مشکلی در ثبت پیام شما به وجود آمد. دوباره تلاش کنید.", {
+        type: "error",
+      });
+    }
   );
 
   const methods = useForm({
