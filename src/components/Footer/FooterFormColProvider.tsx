@@ -13,19 +13,6 @@ interface Props {
 }
 
 const FooterFormColProvider = ({ children }: Props) => {
-  const { serverAction } = useServerAction<UserMessage>(
-    "userMsg",
-    insertUserMessage,
-    () => {
-      toast("پیام شما با موفقیت ثبت شد!", { type: "success" });
-    },
-    () => {
-      toast("مشکلی در ثبت پیام شما به وجود آمد. دوباره تلاش کنید.", {
-        type: "error",
-      });
-    }
-  );
-
   const methods = useForm({
     defaultValues: {
       email: "",
@@ -35,6 +22,20 @@ const FooterFormColProvider = ({ children }: Props) => {
     },
     resolver: yupResolver(submitUserMessageSchema),
   });
+
+  const { serverAction } = useServerAction<UserMessage>(
+    "userMsg",
+    insertUserMessage,
+    () => {
+      toast("پیام شما با موفقیت ثبت شد!", { type: "success" });
+      methods.reset();
+    },
+    () => {
+      toast("مشکلی در ثبت پیام شما به وجود آمد. دوباره تلاش کنید.", {
+        type: "error",
+      });
+    }
+  );
 
   return (
     <FormProvider {...methods}>

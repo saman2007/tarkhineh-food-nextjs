@@ -1,6 +1,6 @@
 import SubmitUserMessageBtn from "./SubmitUserMessageBtn";
 import FooterFormColProvider from "./FooterFormColProvider";
-import TextArea from "../FormRHF/TextAreaUI";
+import TextArea from "../FormRHF/TextArea";
 import TextField from "../FormRHF/TextField";
 
 const FooterFormCol = () => {

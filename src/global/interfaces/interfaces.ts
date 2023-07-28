@@ -4,6 +4,7 @@ import {
   radiusVariants,
   variants,
 } from "@/data/variants/Button";
+import { borderVariants } from "@/data/variants/FormUIs";
 import { LinkProps } from "next/link";
 import {
   DetailedHTMLProps,
@@ -25,24 +26,28 @@ export interface CustomLinkProps
   extends LinkProps,
     Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> {}
 
-export interface TextAreaUIProps
-  extends DetailedHTMLProps<
-    TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  > {
-  resize?: "none" | "both" | "horizontal" | "vertical" | "block" | "inline";
+export interface FormUI {
   height?: string | number;
   width?: string | number;
+  borderVariant?: keyof typeof borderVariants;
+}
+
+export interface TextAreaUIProps
+  extends DetailedHTMLProps<
+      TextareaHTMLAttributes<HTMLTextAreaElement>,
+      HTMLTextAreaElement
+    >,
+    FormUI {
+  resize?: "none" | "both" | "horizontal" | "vertical" | "block" | "inline";
 }
 
 export interface TextFieldUIProps
   extends DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+      InputHTMLAttributes<HTMLInputElement>,
+      HTMLInputElement
+    >,
+    FormUI {
   type?: "password" | "text";
-  width?: string | number;
-  height?: string | number;
 }
 
 export interface FormRHFProps {

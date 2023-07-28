@@ -1,3 +1,4 @@
+import { borderVariants } from "@/data/variants/FormUIs";
 import { TextAreaUIProps } from "@/global/interfaces/interfaces";
 import { Ref, forwardRef } from "react";
 
@@ -9,13 +10,14 @@ const TextAreaUI = (
     style,
     height = "auto",
     width = "auto",
+    borderVariant = "normal",
     ...props
   }: TextAreaUIProps,
   ref: Ref<HTMLTextAreaElement>
 ) => {
   return (
     <textarea
-      className={`p-16 outline-none bg-transparent rounded-8 border-gray-7 font-body-sm border-2 border-solid text-gray-1 placeholder:text-gray-1 ${className}`}
+      className={`p-16 outline-none bg-transparent transition duration-200 rounded-8 border-gray-7 font-body-sm border-2 border-solid text-gray-1 placeholder:text-gray-1 ${className} ${className} ${borderVariants[borderVariant]}`}
       placeholder={placeholder}
       style={{
         resize: resize,
