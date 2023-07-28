@@ -46,7 +46,7 @@ const ServerActionsSituationContext = ({ children }: Props) => {
       );
 
       //shouldn't store a server action situation that already exists
-      if (!newServerActionsSituation.find((situation) => situation.id === id))
+      if (newServerActionsSituation.find((situation) => situation.id === id))
         return serverActionsSituation;
 
       newServerActionsSituation.push({
