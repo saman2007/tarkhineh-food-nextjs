@@ -15,9 +15,10 @@ const TextAreaUI = (
   }: TextAreaUIProps,
   ref: Ref<HTMLTextAreaElement>
 ) => {
+  console.log(borderVariant)
   return (
     <textarea
-      className={`p-16 outline-none bg-transparent transition duration-200 rounded-8 border-gray-7 font-body-sm border-2 border-solid text-gray-1 placeholder:text-gray-1 ${className} ${className} ${borderVariants[borderVariant]}`}
+      className={`p-16 outline-none bg-transparent transition duration-200 rounded-8 font-body-sm text-gray-1 placeholder:text-gray-1 ${className} ${className} ${borderVariants[borderVariant]}`}
       placeholder={placeholder}
       style={{
         resize: resize,
