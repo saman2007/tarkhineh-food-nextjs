@@ -48,9 +48,6 @@ const FooterFormColProvider = ({ children }: Props) => {
               message,
               phoneNumber,
             });
-          },
-          (error) => {
-            console.log(error);
           }
         )}
         className="hidden sd:flex gap-x-[26px] gap-y-[8px] md:flex-row flex-col"
