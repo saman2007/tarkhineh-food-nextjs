@@ -42,6 +42,7 @@ export interface TextAreaUIProps
   error?: string | undefined;
   displayError?: boolean;
   showLengthCounter?: boolean;
+  floatPlaceholder?: boolean;
 }
 
 export interface TextFieldUIProps
@@ -53,6 +54,7 @@ export interface TextFieldUIProps
   type?: "password" | "text";
   error?: string | undefined;
   displayError?: boolean;
+  floatPlaceholder?: boolean;
 }
 
 export interface FormRHFProps {

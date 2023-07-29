@@ -82,4 +82,21 @@
     .font-overline-lg {
         @apply font-normal text-[16px] leading-[180%]
     }
+
+    .text-area-float-placeholder {
+        @apply
+    }
+}
+
+@layer base {
+
+    .float-placeholder-textarea-parent:focus+span,
+    .float-placeholder-textarea-parent:not(:placeholder-shown)+span {
+        @apply -translate-y-[27px] font-caption-md animate-[animate-font-caption-md] duration-300
+    }
+
+    .float-placeholder-input-parent:focus+span,
+    .float-placeholder-input-parent:not(:placeholder-shown)+span {
+        @apply -translate-y-[20px] font-caption-md animate-[animate-font-caption-md] duration-300
+    }
 }

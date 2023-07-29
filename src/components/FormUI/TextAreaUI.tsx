@@ -5,6 +5,7 @@ import { Ref, forwardRef, useState } from "react";
 const TextAreaUI = (
   {
     placeholder = "چیزی بنویسید...",
+    floatPlaceholder = false,
     className = "",
     resize = "none",
     style,
@@ -22,21 +23,28 @@ const TextAreaUI = (
 
   return (
     <div className="flex flex-col">
-      <textarea
-        className={`p-16 outline-none bg-transparent transition duration-200 rounded-8 font-body-sm text-gray-1 placeholder:text-gray-1 ${className} ${className} ${borderVariants[borderVariant]}`}
-        placeholder={placeholder}
-        style={{
-          resize: resize,
-          height: typeof height === "number" ? height + "px" : height,
-          width: typeof width === "number" ? width + "px" : width,
-        }}
-        ref={ref}
-        {...props}
-        onChange={(e) => {
-          if (showLengthCounter) setValue(e.target.value);
-          props?.onChange?.(e);
-        }}
-      ></textarea>
+      <div className="relative flex">
+        <textarea
+          className={`p-16 bg-transparent outline-none transition duration-200 font-body-sm text-gray-1 placeholder:text-gray-1 float-placeholder-textarea-parent rounded-8 ${className} ${borderVariants[borderVariant]}`}
+          placeholder={floatPlaceholder ? " " : placeholder}
+          style={{
+            resize: resize,
+            height: typeof height === "number" ? height + "px" : height,
+            width: typeof width === "number" ? width + "px" : width,
+          }}
+          ref={ref}
+          {...props}
+          onChange={(e) => {
+            if (showLengthCounter) setValue(e.target.value);
+            props?.onChange?.(e);
+          }}
+        ></textarea>
+        {floatPlaceholder && (
+          <span className="absolute top-[16px] font-body-sm right-[16px] text-gray-1 pointer-events-none transition-all duration-200 float-placeholder">
+            {placeholder}
+          </span>
+        )}
+      </div>
       <div className="flex justify-between">
         {(displayError || error?.length !== 0) && (
           <p className="h-[18px] text-error-extra-light font-caption-sm">

@@ -13,6 +13,7 @@ const FooterFormCol = () => {
             height={40}
             placeholder="نام و نام خانوادگی"
             name="fullname"
+            floatPlaceholder
           />
         </div>
         <div className="w-[286px] md:w-[276px]">
@@ -21,6 +22,7 @@ const FooterFormCol = () => {
             height={40}
             placeholder="شماره تماس"
             name="phoneNumber"
+            floatPlaceholder
           />
         </div>
         <div className="w-[286px] md:w-[276px]">
@@ -29,6 +31,7 @@ const FooterFormCol = () => {
             height={40}
             placeholder="آدرس ایمیل (اختیاری)"
             name="email"
+            floatPlaceholder
           />
         </div>
       </div>
@@ -40,6 +43,7 @@ const FooterFormCol = () => {
           name="message"
           showLengthCounter
           maxLength={200}
+          floatPlaceholder
         />
         <SubmitUserMessageBtn />
       </div>

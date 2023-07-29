@@ -12,23 +12,31 @@ const TextFieldUI = (
     borderVariant = "normal",
     error,
     displayError = false,
+    floatPlaceholder = false,
     ...props
   }: TextFieldUIProps,
   ref: Ref<HTMLInputElement>
 ) => {
   return (
     <div className="flex flex-col">
-      <input
-        type={type}
-        className={`outline-none py-12 px-16 transition duration-200 bg-transparent rounded-8 font-body-sm text-gray-1 placeholder:text-gray-1 ${className} ${borderVariants[borderVariant]}`}
-        style={{
-          height: typeof height === "number" ? height + "px" : height,
-          width: typeof width === "number" ? width + "px" : width,
-        }}
-        placeholder={placeholder}
-        ref={ref}
-        {...props}
-      />
+      <div className="flex relative">
+        <input
+          type={type}
+          className={`outline-none py-12 px-16 transition duration-200 bg-transparent rounded-8 font-body-sm text-gray-1 placeholder:text-gray-1 float-placeholder-input-parent ${className} ${borderVariants[borderVariant]}`}
+          style={{
+            height: typeof height === "number" ? height + "px" : height,
+            width: typeof width === "number" ? width + "px" : width,
+          }}
+          placeholder={floatPlaceholder ? " " : placeholder}
+          ref={ref}
+          {...props}
+        />
+        {floatPlaceholder && (
+          <span className="absolute top-[8px] font-body-sm right-[16px] text-gray-1 pointer-events-none transition-all duration-200">
+            {placeholder}
+          </span>
+        )}
+      </div>
       {(displayError || error?.length !== 0) && (
         <p className="h-[18px] text-error-extra-light font-caption-sm">
           {error}
