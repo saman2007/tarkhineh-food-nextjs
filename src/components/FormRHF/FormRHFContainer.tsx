@@ -11,6 +11,7 @@ interface Props {
   field: (
     data: UseFormRegisterReturn<string> & {
       borderVariant: keyof typeof borderVariants;
+      error?: string | undefined;
     }
   ) => React.ReactNode;
   name: string;
@@ -28,21 +29,15 @@ const FormRHFContainer = ({ field, name }: Props) => {
   const borderShouldBeSuccess =
     isSubmitted && !error && getValues(name).length !== 0;
 
-  return (
-    <div className="flex flex-col">
-      {field({
-        ...register(name),
-        borderVariant: error
-          ? "error"
-          : borderShouldBeSuccess
-          ? "success"
-          : "normal",
-      })}
-      <p className="h-[18px] text-error-extra-light font-caption-sm">
-        {error?.toString()}
-      </p>
-    </div>
-  );
+  return field({
+    ...register(name),
+    borderVariant: error
+      ? "error"
+      : borderShouldBeSuccess
+      ? "success"
+      : "normal",
+    error: error?.toString(),
+  });
 };
 
 export default FormRHFContainer;

@@ -38,6 +38,8 @@ const FooterFormCol = () => {
           width={286}
           height={144}
           name="message"
+          showLengthCounter
+          maxLength={200}
         />
         <SubmitUserMessageBtn />
       </div>

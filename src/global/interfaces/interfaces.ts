@@ -39,6 +39,9 @@ export interface TextAreaUIProps
     >,
     FormUI {
   resize?: "none" | "both" | "horizontal" | "vertical" | "block" | "inline";
+  error?: string | undefined;
+  displayError?: boolean;
+  showLengthCounter?: boolean;
 }
 
 export interface TextFieldUIProps
@@ -48,6 +51,8 @@ export interface TextFieldUIProps
     >,
     FormUI {
   type?: "password" | "text";
+  error?: string | undefined;
+  displayError?: boolean;
 }
 
 export interface FormRHFProps {

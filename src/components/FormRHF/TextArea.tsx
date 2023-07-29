@@ -10,7 +10,7 @@ const TextArea = (props: Props) => {
   return (
     <FormRHFContainer
       name={props.name}
-      field={(data) => <TextAreaUI {...props} {...data} />}
+      field={(data) => <TextAreaUI {...props} {...data} displayError={true} />}
     />
   );
 };
