@@ -13,6 +13,7 @@ const TextFieldUI = (
     error,
     displayError = false,
     floatPlaceholder = false,
+    isRHF = false,
     ...props
   }: TextFieldUIProps,
   ref: Ref<HTMLInputElement>

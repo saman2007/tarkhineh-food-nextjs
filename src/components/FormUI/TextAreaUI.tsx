@@ -1,6 +1,7 @@
 import { borderVariants } from "@/data/variants/FormUIs";
 import { TextAreaUIProps } from "@/global/interfaces/interfaces";
 import { Ref, forwardRef, useState } from "react";
+import { useWatch } from "react-hook-form";
 
 const TextAreaUI = (
   {
@@ -15,10 +16,15 @@ const TextAreaUI = (
     error,
     displayError = false,
     showLengthCounter = false,
+    isRHF = false,
     ...props
   }: TextAreaUIProps,
   ref: Ref<HTMLTextAreaElement>
 ) => {
+  const valueRHF: string | undefined = useWatch({
+    name: props.name || "",
+    disabled: !isRHF,
+  });
   const [value, setValue] = useState<string>("");
 
   return (
@@ -35,7 +41,7 @@ const TextAreaUI = (
           ref={ref}
           {...props}
           onChange={(e) => {
-            if (showLengthCounter) setValue(e.target.value);
+            if (showLengthCounter && !isRHF) setValue(e.target.value);
             props?.onChange?.(e);
           }}
         ></textarea>
@@ -53,7 +59,7 @@ const TextAreaUI = (
         )}
         {showLengthCounter && (
           <p className="h-[18px] text-error-extra-light font-caption-sm">
-            {value.length}
+            {isRHF ? valueRHF?.length : value.length}
             {props.maxLength ? `/${props.maxLength}` : ""}
           </p>
         )}

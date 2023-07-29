@@ -12,6 +12,7 @@ interface Props {
     data: UseFormRegisterReturn<string> & {
       borderVariant: keyof typeof borderVariants;
       error?: string | undefined;
+      isRHF: true;
     }
   ) => React.ReactNode;
   name: string;
@@ -37,6 +38,7 @@ const FormRHFContainer = ({ field, name }: Props) => {
       ? "success"
       : "normal",
     error: error?.toString(),
+    isRHF: true,
   });
 };
 
