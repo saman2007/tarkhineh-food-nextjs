@@ -1,7 +1,8 @@
 export const variants = {
   normal: "",
   fill: "py-8 px-8 sd:px-16 flex justify-center items-center gap-[8px]",
-  outline: "py-8 px-16 sd:px-16 flex justify-center items-center",
+  outline:
+    "py-8 px-16 sd:px-16 flex justify-center items-center bg-transparent border border-solid ",
 };
 
 export const radiusVariants = {
@@ -18,12 +19,17 @@ export const fontVariants = {
 };
 
 export const colorVariants = {
-  default: "",
-  primary: "hover:bg-shade-1 bg-primary text-white",
-  secondary:
-    "bg-transparent border border-solid border-white text-white hover:bg-white hover:text-primary",
-  tertiary:
-    "bg-transparent border border-solid border-shade-2 text-shade-2 hover:bg-shade-2 hover:text-white",
-  fourth:
-    "bg-transparent border border-solid border-gray-7 text-gray-1 hover:bg-gray-7",
+  normal: {
+    primary: "",
+  },
+  fill: {
+    primary: "hover:bg-shade-1 bg-primary text-white",
+  },
+  outline: {
+    primary: "border-white text-white hover:bg-white hover:text-primary",
+    secondary: "border-shade-2 text-shade-2 hover:bg-shade-2 hover:text-white",
+    tertiary: "border-gray-7 text-gray-1 hover:bg-gray-7",
+  },
 };
+
+export type VariantsType = keyof typeof variants;

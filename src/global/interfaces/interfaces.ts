@@ -12,13 +12,19 @@ import {
   TextareaHTMLAttributes,
 } from "react";
 
-export interface ButtonProps {
-  variant?: keyof typeof variants;
+export interface ButtonProps<T extends keyof typeof variants> {
+  /** the main variant of component*/
+  variant?: T;
+  /** each main variant has some color variants and you can set the color variant of a main variant here  */
+  colorVariant?: keyof (typeof colorVariants)[T];
+  /** a number that will be in use in border-radius of button  */
   radiusVariant?: keyof typeof radiusVariants;
   fontVariant?: keyof typeof fontVariants;
-  colorVariant?: keyof typeof colorVariants;
+  /** the amount of height of button. if it is number, it will be used as `px` and if it is a sting it will be used itself */
   height?: string | number;
+  /** the amount of width of button. if it is number, it will be used as `px` and if it is a sting it will be used itself */
   width?: string | number;
+  /** the state of loading in button. if it is true, a loading spinner will be displayed at the center of button instead of displaying children */
   isLoading?: boolean;
 }
 

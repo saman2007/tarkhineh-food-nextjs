@@ -1,4 +1,4 @@
-import Link from "@/components/LinkButton/LinkButton";
+import LinkButton from "@/components/LinkButton/LinkButton";
 import { SliderData } from "@/lib/queries/home/interfaces";
 
 const HomeSlide = ({
@@ -17,7 +17,7 @@ const HomeSlide = ({
       <p className="font-header-6 sd:font-header-2 text-tint-1 text-center max-w-[95%] sd:max-w-[80%] mx-auto">
         {text}
       </p>
-      <Link
+      <LinkButton
         variant="fill"
         href={targetPage}
         width={184}
@@ -26,8 +26,8 @@ const HomeSlide = ({
         colorVariant="primary"
       >
         سفارش آنلاین غذا
-      </Link>
-      <Link
+      </LinkButton>
+      <LinkButton
         variant="fill"
         href={targetPage}
         width={91}
@@ -37,7 +37,7 @@ const HomeSlide = ({
         colorVariant="primary"
       >
         سفارش آنلاین غذا
-      </Link>
+      </LinkButton>
     </div>
   );
 };

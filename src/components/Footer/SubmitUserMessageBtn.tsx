@@ -11,7 +11,7 @@ const SubmitUserMessageBtn = () => {
       width={183}
       height={40}
       variant="outline"
-      colorVariant="fourth"
+      colorVariant="tertiary"
       radiusVariant={8}
       type="submit"
       isLoading={isLoading}

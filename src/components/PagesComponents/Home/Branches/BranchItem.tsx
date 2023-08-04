@@ -2,7 +2,7 @@ import { BranchData } from "@/data/branchesData";
 import BranchImg from "./BranchImg";
 import BranchItemContainer from "./BranchItemContainer";
 import BranchLinkContainer from "./BranchLinkContainer";
-import ButtonLink from "@/components/LinkButton/LinkButton";
+import LinkButton from "@/components/LinkButton/LinkButton";
 import { ArrowLeft2 } from "iconsax-react";
 import Link from "@/Link/Link";
 
@@ -27,10 +27,10 @@ const BranchItem = ({
         </p>
       </div>
       <BranchLinkContainer>
-        <ButtonLink
+        <LinkButton
           href={href}
-          colorVariant="tertiary"
           variant="outline"
+          colorVariant="secondary"
           width={128}
           height={32}
           fontVariant="captionMd"
@@ -39,7 +39,7 @@ const BranchItem = ({
         >
           صفحه شعبه
           <ArrowLeft2 size={16} />
-        </ButtonLink>
+        </LinkButton>
       </BranchLinkContainer>
     </BranchItemContainer>
   );

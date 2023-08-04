@@ -1,4 +1,4 @@
-import Link from "@/components/LinkButton/LinkButton";
+import LinkButton from "@/components/LinkButton/LinkButton";
 import Responsive from "@/components/Responsive/Responsive";
 import { ArrowLeft2 } from "iconsax-react";
 
@@ -17,7 +17,7 @@ const RightSection = () => {
       </p>
       <div className="mt-[8px] sd:mt-[16px] flex justify-end">
         <Responsive md lg fullLg>
-          <Link
+          <LinkButton
             href={"/about-us"}
             variant="outline"
             radiusVariant={4}
@@ -25,24 +25,24 @@ const RightSection = () => {
             height={40}
             fontVariant="captionMdAndBtnLg"
             className="gap-x-[8px]"
-            colorVariant="secondary"
+            colorVariant="primary"
           >
             اطلاعات بیشتر
             <ArrowLeft2 size={24} />
-          </Link>
+          </LinkButton>
         </Responsive>
         <Responsive sm sd>
-          <Link
+          <LinkButton
             href={"/about-us"}
             variant="outline"
             radiusVariant={4}
             width={152}
             height={32}
             fontVariant="captionMdAndBtnLg"
-            colorVariant="secondary"
+            colorVariant="primary"
           >
             اطلاعات بیشتر
-          </Link>
+          </LinkButton>
         </Responsive>
       </div>
     </div>

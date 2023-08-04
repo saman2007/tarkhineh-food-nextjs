@@ -1,4 +1,5 @@
 import {
+  VariantsType,
   colorVariants,
   fontVariants,
   radiusVariants,
@@ -8,33 +9,35 @@ import { ButtonProps } from "@/global/interfaces/interfaces";
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import LoadingIcon from "../Icons/LoadingIcon";
 
-interface Props
-  extends ButtonProps,
+interface Props<T extends VariantsType>
+  extends ButtonProps<T>,
     DetailedHTMLProps<
       ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     > {}
 
-const Button = ({
+function Button<T extends VariantsType>(props: Props<T>): JSX.Element;
+
+function Button({
   children,
   variant = "normal",
   height = "auto",
   width = "auto",
   radiusVariant = 0,
   fontVariant = "captionSmAndBtnLg",
-  colorVariant = "default",
+  colorVariant = "primary",
   className,
   style,
   isLoading = false,
   ...props
-}: Props) => {
+}: Props<VariantsType>) {
   return (
     <button
       className={`transition duration-300 flex justify-center items-center ${
         variants[variant]
       } ${radiusVariants[radiusVariant]} ${fontVariants[fontVariant]} ${
         className || ""
-      } ${colorVariants[colorVariant]}`}
+      } ${colorVariants[variant][colorVariant]}`}
       style={{
         height: typeof height === "number" ? height + "px" : height,
         width: typeof width === "number" ? width + "px" : width,
@@ -45,6 +48,6 @@ const Button = ({
       {isLoading ? <LoadingIcon /> : children}
     </button>
   );
-};
+}
 
 export default Button;
