@@ -2,21 +2,9 @@ import { StoryObj, Meta } from "@storybook/react";
 
 import Button from "@/components/Button/Button";
 import { ButtonProps } from "@/global/interfaces/interfaces";
-import { VariantsType } from "@/data/variants/Button";
+import { VariantsType, colorVariants, variants } from "@/data/variants/Button";
 
 type Story = StoryObj<typeof Button>;
-
-//TODO: add reactive variant and color variant
-/** a Button component with different variants */
-const meta: Meta<typeof Button> = {
-  component: Button,
-  tags: ["autodocs"],
-  argTypes: {
-    variant: {
-      control: { type: "select" },
-    },
-  },
-};
 
 const defaultArgs: ButtonProps<VariantsType> & { children?: React.ReactNode } =
   {
@@ -24,21 +12,38 @@ const defaultArgs: ButtonProps<VariantsType> & { children?: React.ReactNode } =
     width: 100,
     radiusVariant: 4,
     children: "Button!",
-    colorVariant: "primary",
   };
+
+const allColorVariantsField = Object.keys(colorVariants).reduce(
+  (prevValue, currentValue) => {
+    const prevValueLength = Object.keys(prevValue).length;
+    const currentValueLength = Object.keys(currentValue).length;
+
+    if (currentValueLength > prevValueLength) return currentValue;
+
+    return prevValue;
+  }
+) as keyof typeof variants;
+
+/** a Button component with different variants */
+const meta: Meta<typeof Button> = {
+  component: Button,
+  tags: ["autodocs"],
+  args: defaultArgs,
+  argTypes: {
+    variant: {
+      control: "select",
+    },
+    colorVariant: {
+      options: Object.keys(colorVariants[allColorVariantsField]),
+    },
+  },
+};
 
 const Normal: Story = {
   args: {
-    ...defaultArgs,
     variant: "normal",
-  },
-  argTypes: {
-    variant: {
-      options: ["normal"],
-    },
-    colorVariant: {
-      options: ["primary"] as ButtonProps<"normal">["colorVariant"][],
-    },
+    colorVariant: "primary",
   },
   parameters: {
     backgrounds: {
@@ -49,16 +54,8 @@ const Normal: Story = {
 
 const Fill: Story = {
   args: {
-    ...defaultArgs,
     variant: "fill",
-  },
-  argTypes: {
-    variant: {
-      options: ["fill"],
-    },
-    colorVariant: {
-      options: ["primary"] as ButtonProps<"fill">["colorVariant"][],
-    },
+    colorVariant: "primary",
   },
   parameters: {
     backgrounds: {
@@ -69,20 +66,8 @@ const Fill: Story = {
 
 const Outline: Story = {
   args: {
-    ...defaultArgs,
     variant: "outline",
-  },
-  argTypes: {
-    variant: {
-      options: ["outline"],
-    },
-    colorVariant: {
-      options: [
-        "primary",
-        "secondary",
-        "tertiary",
-      ] as ButtonProps<"outline">["colorVariant"][],
-    },
+    colorVariant: "primary",
   },
   parameters: {
     backgrounds: {
@@ -91,5 +76,5 @@ const Outline: Story = {
   },
 };
 
-export { Fill, Normal, Outline };
+export { Normal, Fill, Outline };
 export default meta;
