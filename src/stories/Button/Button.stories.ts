@@ -30,12 +30,19 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   args: defaultArgs,
+  title: "Components/Button",
   argTypes: {
     variant: {
       control: "select",
     },
     colorVariant: {
       options: Object.keys(colorVariants[allColorVariantsField]),
+    },
+    fontVariant: {
+      control: "select",
+    },
+    radiusVariant: {
+      control: "select",
     },
   },
 };

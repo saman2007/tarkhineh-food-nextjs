@@ -19,6 +19,7 @@ export interface ButtonProps<T extends keyof typeof variants> {
   colorVariant?: keyof (typeof colorVariants)[T];
   /** a number that will be in use in border-radius of button  */
   radiusVariant?: keyof typeof radiusVariants;
+  /** fonts that are available for Button component. */
   fontVariant?: keyof typeof fontVariants;
   /** the amount of height of button. if it is number, it will be used as `px` and if it is a sting it will be used itself */
   height?: string | number;
