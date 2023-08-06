@@ -1,17 +1,20 @@
 import { StoryObj, Meta } from "@storybook/react";
-import Button from "@/components/Button/Button";
-import { ButtonProps } from "@/global/interfaces/interfaces";
+import { ButtonProps, CustomLinkProps } from "@/global/interfaces/interfaces";
 import { VariantsType, colorVariants, variants } from "@/data/variants/Button";
+import LinkButton from "@/components/LinkButton/LinkButton";
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof LinkButton>;
 
-const defaultArgs: ButtonProps<VariantsType> & { children?: React.ReactNode } =
-  {
-    height: 48,
-    width: 100,
-    radiusVariant: 4,
-    children: "Button!",
-  };
+const defaultArgs: ButtonProps<VariantsType> & CustomLinkProps = {
+  height: 48,
+  width: 150,
+  radiusVariant: 4,
+  children: "Link Button!",
+  href: "/page/test",
+  onMouseEnter: undefined,
+  onTouchStart: undefined,
+  onClick: undefined,
+};
 
 const allColorVariantsField = Object.keys(colorVariants).reduce(
   (prevValue, currentValue) => {
@@ -24,12 +27,12 @@ const allColorVariantsField = Object.keys(colorVariants).reduce(
   }
 ) as keyof typeof variants;
 
-/** a Button component with different variants */
-const meta: Meta<typeof Button> = {
-  component: Button,
+/** a LinkButton component with UI of Button component and Next Link component with different variants */
+const meta: Meta<typeof LinkButton> = {
+  component: LinkButton,
   tags: ["autodocs"],
   args: defaultArgs,
-  title: "Components/Button",
+  title: "Components/LinkButton",
   argTypes: {
     variant: {
       control: "select",
