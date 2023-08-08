@@ -4,7 +4,7 @@ import BranchItemContainer from "./BranchItemContainer";
 import BranchLinkContainer from "./BranchLinkContainer";
 import LinkButton from "@/components/LinkButton/LinkButton";
 import { ArrowLeft2 } from "iconsax-react";
-import Link from "@/Link/Link";
+import Link from "@/components/Link/Link";
 
 const BranchItem = ({
   name,

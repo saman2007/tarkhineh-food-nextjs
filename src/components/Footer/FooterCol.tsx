@@ -1,6 +1,6 @@
 import { Footer } from "@/data/footerData";
 import Responsive from "../Responsive/Responsive";
-import Link from "@/Link/Link";
+import Link from "@/components/Link/Link";
 
 const FooterCol = ({ items, title, icons }: Footer) => {
   return (

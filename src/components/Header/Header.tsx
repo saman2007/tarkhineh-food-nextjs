@@ -5,7 +5,7 @@ import HeaderText from "./HeaderText/HeaderText";
 import Logo from "./Logo/Logo";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
 import { desktopMenuData } from "@/data/headerData";
-import Link from "@/Link/Link";
+import Link from "@/components/Link/Link";
 
 type IconChipType = { icon: React.ReactNode; hideOnMd?: boolean }[];
 
