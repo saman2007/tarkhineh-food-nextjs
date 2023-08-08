@@ -1,17 +1,17 @@
+import { sizes } from "@/data/variants/Container";
+
 interface Props {
-  variant: keyof typeof variants;
+  /** maximum size of container */
+  size: keyof typeof sizes;
+  /** any element you want to display inside container */
   children: React.ReactNode;
+  /** extra classes you want to add to container */
   className?: string;
 }
 
-const variants = {
-  lg: "max-w-[1224px]",
-};
-
-const Container = ({ variant, children, className }: Props) => {
-  return (
-    <div className={`${variants[variant]} ${className} m-auto`}>{children}</div>
-  );
+/** a component to be the container of elements to prevent the width from becoming too large */
+const Container = ({ size, children, className = "" }: Props) => {
+  return <div className={`${sizes[size]} ${className} m-auto`}>{children}</div>;
 };
 
 export default Container;

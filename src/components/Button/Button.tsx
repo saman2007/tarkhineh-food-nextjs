@@ -18,6 +18,7 @@ interface Props<T extends VariantsType>
 
 function Button<T extends VariantsType>(props: Props<T>): JSX.Element;
 
+/** a Button component with different variants */
 function Button({
   children,
   variant = "normal",

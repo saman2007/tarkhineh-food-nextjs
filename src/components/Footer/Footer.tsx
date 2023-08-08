@@ -18,7 +18,7 @@ const Footer = () => {
       }}
     >
       <Container
-        variant="lg"
+        size="lg"
         className="flex justify-between md:items-center gap-x-[20px] gap-y-[30px] flex-wrap h-full w-full"
       >
         {footerCols}

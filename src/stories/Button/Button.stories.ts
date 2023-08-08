@@ -24,7 +24,6 @@ const allColorVariantsField = Object.keys(colorVariants).reduce(
   }
 ) as keyof typeof variants;
 
-/** a Button component with different variants */
 const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],

@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header className="fixed z-10 p-16 right-0 left-0 h-[115px] gap-[39px] bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.15)]">
       <Container
-        variant="lg"
+        size="lg"
         className="flex items-center justify-between h-full w-full"
       >
         <NavigationMenu />

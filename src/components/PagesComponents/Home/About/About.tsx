@@ -14,7 +14,7 @@ const About = () => {
       />
       <div className="z-[2] bg-[#00000060] backdrop-blur-[4px] min-h-[390px] relative px-20 sd:px-24 py-16 sd:py-48">
         <Container
-          variant="lg"
+          size="lg"
           className="flex justify-between flex-col md:flex-row items-center gap-y-[42px] sd:gap-y-[24px]"
         >
           <RightSection />

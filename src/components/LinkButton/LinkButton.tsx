@@ -9,6 +9,7 @@ interface Props<T extends VariantsType>
 
 function LinkButton<T extends VariantsType>(props: Props<T>): JSX.Element;
 
+/** a LinkButton component with UI of Button component and Next Link component with different variants */
 function LinkButton({
   children,
   variant,
