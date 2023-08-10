@@ -100,3 +100,7 @@
         @apply -translate-y-[20px] font-caption-md animate-[animate-font-caption-md] duration-300
     }
 }
+
+.docs-story {
+    direction: rtl;
+}

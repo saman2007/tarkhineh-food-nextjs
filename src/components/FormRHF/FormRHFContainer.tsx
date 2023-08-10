@@ -2,7 +2,9 @@
 
 import { borderVariants } from "@/data/variants/FormUIs";
 import {
+  FieldValues,
   UseFormRegisterReturn,
+  UseFormWatch,
   useFormContext,
   useFormState,
 } from "react-hook-form";
@@ -13,13 +15,14 @@ interface Props {
       borderVariant: keyof typeof borderVariants;
       error?: string | undefined;
       isRHF: true;
+      watch: UseFormWatch<FieldValues>;
     }
   ) => React.ReactNode;
   name: string;
 }
 
 const FormRHFContainer = ({ field, name }: Props) => {
-  const { register, getValues } = useFormContext();
+  const { register, getValues, watch } = useFormContext();
   const { errors, isSubmitted } = useFormState({ name });
   const error = errors[name]?.message;
 
@@ -39,6 +42,7 @@ const FormRHFContainer = ({ field, name }: Props) => {
       : "normal",
     error: error?.toString(),
     isRHF: true,
+    watch,
   });
 };
 
