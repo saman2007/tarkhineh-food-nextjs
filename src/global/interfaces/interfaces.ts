@@ -32,9 +32,9 @@ export interface CustomLinkProps
     Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> {}
 
 export interface SizeStyles {
-  /** height of input element. if it is number, it will be concatinated with px, else it will be used itself */
+  /** height of element. if it is number, it will be concatinated with px, else it will be used itself */
   height?: string | number;
-  /** width of input element. if it is number, it will be concatinated with px, else it will be used itself */
+  /** width of element. if it is number, it will be concatinated with px, else it will be used itself */
   width?: string | number;
 }
 
@@ -52,32 +52,34 @@ export interface FormUIError {
   displayError?: boolean;
 }
 
+export interface FloatPlaceholder {
+  /** if you want to move placeholder of input to above of it when user focused the input or wrote anything in input, this option must be true */
+  floatPlaceholder?: boolean;
+}
+
 export interface TextAreaUIProps
   extends DetailedHTMLProps<
       TextareaHTMLAttributes<HTMLTextAreaElement>,
       HTMLTextAreaElement
     >,
     FormUI,
-    FormUIError {
+    FormUIError,
+    FloatPlaceholder {
   /** resize attribute of textarea */
   resize?: "none" | "both" | "horizontal" | "vertical" | "block" | "inline";
   /** if you want to display the length of entered string this option must be true */
   showLengthCounter?: boolean;
-  /** if you want to move placeholder of input to above of it when user focused the input or wrote anything in input, this option must be true */
-  floatPlaceholder?: boolean;
   /** watch is watch method from useForm. if your using FormRHF, it will be passed automatically */
   watch?: UseFormWatch<FieldValues>;
 }
 
 export interface TextFieldUIProps
-  extends DetailedHTMLProps<
-      InputHTMLAttributes<HTMLInputElement>,
-      HTMLInputElement
-    >,
-    FormUI,
-    FormUIError {
+  extends FormUI,
+    DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+    FormUIError,
+    FloatPlaceholder {
+  /** possible types of text field */
   type?: "password" | "text";
-  floatPlaceholder?: boolean;
 }
 
 export interface FormRHFProps {

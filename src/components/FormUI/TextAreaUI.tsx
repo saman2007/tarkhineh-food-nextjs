@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 "use client";
 
 import { borderVariants } from "@/data/variants/FormUIs";
@@ -70,5 +69,11 @@ export const TextAreaUI = forwardRef<HTMLTextAreaElement, TextAreaUIProps>(
     );
   }
 );
+
+/* i do this because that storybook cant recognize interface props and their docs
+   of this component to display in doc if i export this component like this: export
+   default forwardRef<HTMLTextAreaElement, TextAreaUIProps>(TextAreaUI)
+*/
+TextAreaUI.displayName = "TextAreaUI";
 
 export default TextAreaUI;
