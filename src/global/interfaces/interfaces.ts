@@ -83,5 +83,6 @@ export interface TextFieldUIProps
 }
 
 export interface FormRHFProps {
+  /** name is actually the name of validation key in yup validation and react hook form uses it */
   name: string;
 }
