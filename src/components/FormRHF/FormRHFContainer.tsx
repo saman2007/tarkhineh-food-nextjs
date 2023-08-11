@@ -9,7 +9,8 @@ import {
   useFormState,
 } from "react-hook-form";
 
-interface Props {
+export interface Props {
+  /** field is a function that returns form component UI. it sends some data that a component should accept it as props */
   field: (
     data: UseFormRegisterReturn<string> & {
       borderVariant: keyof typeof borderVariants;
@@ -18,9 +19,11 @@ interface Props {
       watch: UseFormWatch<FieldValues>;
     }
   ) => React.ReactNode;
+  /** name is actually the name of validation key in yup validation and react hook form uses it */
   name: string;
 }
 
+/** FormRHFContainer is the container of all RHF forms */
 const FormRHFContainer = ({ field, name }: Props) => {
   const { register, getValues, watch } = useFormContext();
   const { errors, isSubmitted } = useFormState({ name });
