@@ -4,8 +4,9 @@ import { FormRHFProps, TextFieldUIProps } from "@/global/interfaces/interfaces";
 import TextFieldUI from "../FormUI/TextFieldUI";
 import FormRHFContainer from "./FormRHFContainer";
 
-interface Props extends FormRHFProps, Omit<TextFieldUIProps, "name"> {}
+export interface Props extends FormRHFProps, Omit<TextFieldUIProps, "name"> {}
 
+/** a TextField RHF component that must be used with react hook form */
 const TextField = (props: Props) => {
   return (
     <FormRHFContainer
