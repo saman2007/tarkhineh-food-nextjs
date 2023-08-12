@@ -6,8 +6,9 @@ import Logo from "./Logo/Logo";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
 import { desktopMenuData } from "@/data/headerData";
 import Link from "@/components/Link/Link";
+import { SVG } from "@/global/types/types";
 
-type IconChipType = { icon: React.ReactNode; hideOnMd?: boolean }[];
+type IconChipType = { icon: React.ReactElement<SVG>; hideOnMd?: boolean }[];
 
 const iconChips: IconChipType = [
   {
