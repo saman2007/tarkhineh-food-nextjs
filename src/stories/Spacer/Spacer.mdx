@@ -1,0 +1,30 @@
+import { Meta, Controls, ArgTypes, Source } from "@storybook/blocks";
+import Spacer from "@/components/Spacer/Spacer";
+
+<Meta title="Components/Spacer/Spacer" />
+
+# Spacer
+
+## About
+
+When you have an element with `position: fixed`, it doesnt cause other elements to be rendered down of it. Elements go under it and it causes problems.
+For example there is a fixed naviagtion bar in the website. Some elements will be rendered under the navigation bar and it is a bad behavior.
+To solve this problem, there is a component with the name of `Spacer`.
+
+## Props
+
+<ArgTypes of={Spacer} />
+
+## How To Use?
+
+For example you have a navigation bar with `height: 180px;`. You dont want to render 180px of elements under nav bar. Just put `Spacer` component under
+the nav bar and give height prop `180`. now other elements will be rendered below nav bar! See the example below:
+
+<Source
+  code={`
+  <>
+    <nav classname="h-[180px] bg-primary">some content</nav>
+    <Spacer height={180} />
+  </>
+  `}
+/>
