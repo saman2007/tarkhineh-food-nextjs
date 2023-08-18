@@ -1,0 +1,61 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Hooks/useServerActionSituation" />
+
+# useServerActionSituation
+
+## About
+
+A hook to get the situation of a server action. for example to see that server action is loading or not, or it had error or not.
+
+## Params
+
+- `id: string` id of server action that is registered with
+
+## Returns
+
+<Source code=
+{`
+{
+  /** is server action in being executed? */
+  isLoading: boolean | undefined;
+
+  /** did server action has an error in its execution? */
+  hasError: boolean | undefined;
+}
+`} />
+
+## Notes
+
+- This hook must be used inside the `ServerActionsSituationContext` Provider.
+
+## Usage
+
+<Source code=
+{` 
+"use client";
+
+import useServerActionSituation from "@/hooks/useServerActionSituation";
+//other imports...
+
+const SubmitUserMessageBtn = () => {
+  const { isLoading } = useServerActionSituation("userMsg");
+
+  return (
+    <Button
+      width={183}
+      height={40}
+      variant="outline"
+      colorVariant="tertiary"
+      radiusVariant={8}
+      type="submit"
+      isLoading={isLoading}
+      disabled={isLoading}
+    >
+      Submit Message!
+    </Button>
+  );
+};
+
+export default SubmitUserMessageBtn;
+`}/>

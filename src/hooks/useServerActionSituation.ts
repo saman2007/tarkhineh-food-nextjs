@@ -2,14 +2,17 @@ import { serverActionsSituationContext } from "@/contexts/ServerActionsSituation
 import { useContext } from "react";
 
 interface UseServerActionSituationReturn {
+  /** is server action in being executed? */
   isLoading: boolean | undefined;
+  /** did server action has an error in its execution? */
   hasError: boolean | undefined;
 }
 
 /**
- * a hook to get the situation of a server action. for example to see that server action is loading or not, or it had error or not.
+ * A hook to get the situation of a server action. for example to see that server action is loading or not, or it had error or not.
  * @param id id of server action that is registered with
- * @returns {object} an object with isLoading and hasError props
+ * @returns An object with isLoading and hasError props
+ * * This hook must be used inside the `ServerActionsSituationContext` Provider
  */
 const useServerActionSituation = (
   id: string

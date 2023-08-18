@@ -1,0 +1,29 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Hooks/useIsUrlMatch" />
+
+# useIsUrlMatch
+
+## About
+
+A hook to specify that the given url is match with the current url or not. When you want to do something in a component that is being used
+in multiple pages but that work should be done on a specific page, use this hook.
+
+## Params
+
+- `url: string` It is the url that if it is equal to the current url, `useIsUrlMatch` returns true and else false
+
+## Returns
+
+<Source code="boolean" />
+
+## Usage
+
+<Source code=
+{` 
+const MyComponent = () => {
+    const isHomePage = useIsUrlMatch('/home');
+
+    return <p styles={{backgroundColor: isHomePage ? 'green' : 'red'}}>Home</p>;
+}
+`}/>

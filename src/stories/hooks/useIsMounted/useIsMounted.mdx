@@ -1,0 +1,27 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Hooks/useIsMounted" />
+
+# useIsMounted
+
+## About
+
+A hook to specify that a component is mounted on the DOM or not. Use it when you want to use a function or anything else that need to be run
+in client side.
+
+## Returns
+
+<Source code="boolean" />
+
+## Usage
+
+<Source code=
+{` 
+const MyComponent = () => {
+    const isMounted = useIsMounted();
+
+    const text = isMounted ? "Mounted!" : "Not Mounted Yet!";
+
+    return <h1>{text}</h1>;
+}
+`}/>

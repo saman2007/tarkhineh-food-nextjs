@@ -1,0 +1,120 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Hooks/useServerAction" />
+
+# useServerAction
+
+## About
+
+A hook to register server action in context and return a better version of server action that submits error and
+loading and can be used in client components.
+
+## Generics
+
+This hook accepts a generic type that is the argument that your server action accepts.
+
+## Params
+
+- `id: string` Unique id of server action that will be submited in server action situation context
+- `serverAction: (data: T) => Promise<void>` Server action function
+- `onSuccess?: () => void | undefined` A callback function that will be executed if server action call was successful
+- `onError?: () => void | undefined` A callback function that will be executed if server action had an error
+
+## Returns
+
+<Source
+  code={`
+{ 
+    //New and better version of your server action
+    serverAction: (data: T) => void;
+}
+`}
+/>
+
+## Notes
+
+- This hook must be used inside the `ServerActionsSituationContext` Provider.
+
+## Usage
+
+<Source code=
+{`
+"use server";
+
+import { mysql } from "@/lib/db";
+import { UserMessage } from "./interfaces";
+
+//server action is defined here
+const insertUserMessage = async ({
+  email,
+  fullname,
+  message,
+  phoneNumber,
+}: UserMessage) => {
+  await mysql.query(
+    "INSERT INTO user_messages ( fullname, phoneNumber, email, message ) VALUES ( ?, ?, ?, ? )",
+    [fullname, phoneNumber, email, message]
+  );
+};
+
+export { insertUserMessage };
+`} />
+
+<Source code=
+{`
+"use client";
+
+import useServerAction from "@/hooks/useServerAction";
+import { insertUserMessage } from "@/lib/queries/global";
+import { UserMessage } from "@/lib/queries/global/interfaces";
+//and other imports
+
+interface Props {
+  children: React.ReactNode;
+}
+
+const FooterFormColProvider = ({ children }: Props) => {
+  const methods = useForm({
+    defaultValues: {
+      email: "",
+      fullname: "",
+      message: "",
+      phoneNumber: "",
+    },
+    resolver: yupResolver(submitUserMessageSchema),
+  });
+
+  const { serverAction } = useServerAction<UserMessage>(
+    "userMsg",
+    insertUserMessage,
+    () => {
+      toast("Submitted!", { type: "success" });
+      methods.reset();
+    },
+    () => {
+      toast("Something went wrong!", {
+        type: "error",
+      });
+    }
+  );
+
+  return (
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(
+          ({ email, fullname, message, phoneNumber }) => {
+            serverAction({
+              email: email || "",
+              fullname,
+              message,
+              phoneNumber,
+            });
+          }
+        )}
+        className="hidden sd:flex gap-x-[26px] gap-y-[8px] md:flex-row flex-col"
+      >
+        {children}
+      </form>
+    </FormProvider>
+  );
+};`}/>

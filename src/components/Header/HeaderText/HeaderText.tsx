@@ -2,11 +2,11 @@
 
 import Link from "@/components/Link/Link";
 import { HeaderTextData } from "@/data/headerData";
-import useMatchedUrl from "@/hooks/useMatchedUrl";
+import useIsUrlMatch from "@/hooks/useIsUrlMatch";
 import { ArrowDown2 } from "iconsax-react";
 
 const HeaderText = ({ text, hasSubMenu, href, subMenus }: HeaderTextData) => {
-  const isUrlMatched = useMatchedUrl(href);
+  const isUrlMatched = useIsUrlMatch(href);
 
   return (
     <div className="relative group">

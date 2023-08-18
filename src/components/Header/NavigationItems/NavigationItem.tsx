@@ -1,4 +1,4 @@
-import useMatchedUrl from "@/hooks/useMatchedUrl";
+import useIsUrlMatch from "@/hooks/useIsUrlMatch";
 import { ArrowDown2 } from "iconsax-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -15,7 +15,7 @@ const NavigationItem = ({
 }: MobileMenuData & { subItemClassName?: string }) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
-  const isUrlMatched = useMatchedUrl(href || "");
+  const isUrlMatched = useIsUrlMatch(href || "");
 
   const parentClasses =
     "flex justify-between items-center text-gray-7 pb-4 sd:pb-8 hover:text-primary";
