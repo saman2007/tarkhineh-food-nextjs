@@ -1,0 +1,27 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Helpers/cloneDeep" />
+
+# cloneDeep
+
+## About
+
+A helper function to return new refrence from an object.
+
+## Params
+
+- `obj: T` Obj is the object you want to deep clone
+
+## Returns
+
+A new refrence of your given object
+
+## Usage
+
+<Source code=
+{` 
+const myObj = {name: 'saman', lastName: 'ahrari', info: { job: "programmer", age: 16 }};
+    
+//this objects and its nested objects refrences are completely different with above object
+const myCompletlyNewObj = cloneDeep(myObj);
+`}/>
