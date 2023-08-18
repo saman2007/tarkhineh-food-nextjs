@@ -1,0 +1,59 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Contexts/ServerActionsSituationContext" />
+
+# ServerActionsSituationContext
+
+## About
+
+A context that stores server action situations.
+
+## Values
+
+<Source code=
+{`
+type Situation = {
+  /** Is your server action being executed right now?? */
+  isLoading: boolean;
+
+  /** did your server action has error? */
+  hasError: boolean;
+};
+
+type ServerActionsSituation = ({
+  /** Unique id of server action situation */
+  id: string;
+} & Situation)[];
+
+type SubmitServerAction = (id: string) => void;
+
+type SetServerActionSituation = (
+  /** The unique id that you set for your server action situation */
+  id: string,
+  /** The situation that you want to update */
+  situation: Partial<Situation>
+) => void;
+`} />
+
+<Source code=
+{`
+{
+  /** All stored situations */
+  situations: ServerActionsSituation;
+
+  /** A function to submit server action situation */
+  submitServerAction: SubmitServerAction;
+
+  /** A function to set situation for currently stored server action situation */
+  setServerActionSituation: SetServerActionSituation;
+}
+`} />
+
+## Usage
+
+First wrap the top level contents that you want to use server actions situation context(main layout of this app is currently wrapped with this context).
+You probably only need to wrap the contents with this context provider. `useServerAction` and `useServerActionSituation` use this context internally.
+See the codes of these two custom hooks to understand how to use this context:
+
+- [useServerAction](https://github.com/saman2007/tarkhineh-food-nextjs/blob/master/src/hooks/useServerAction.ts)
+- [useServerActionSituation](https://github.com/saman2007/tarkhineh-food-nextjs/blob/master/src/hooks/useServerActionSituation.ts)

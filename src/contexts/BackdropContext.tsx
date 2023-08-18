@@ -7,10 +7,17 @@ import React, {
   createContext,
 } from "react";
 
-type BackdropStateType = { isOpen: boolean; className?: string };
+type BackdropStateType = {
+  /** Is the backdrop open or not? */
+  isOpen: boolean;
+  /** If there are some classes that you want to add to backdrop, add them here */
+  className?: string;
+};
 
 interface BackdropContextType {
+  /** isBackdropOpen is state that the context use to display backdrop */
   isBackdropOpen: BackdropStateType;
+  /** setState for isBackdropOpen state */
   setIsBackdropOpen: Dispatch<SetStateAction<BackdropStateType>>;
 }
 
@@ -23,6 +30,7 @@ const backdropContext = createContext<BackdropContextType>({
   setIsBackdropOpen: (value: SetStateAction<BackdropStateType>) => {},
 });
 
+/** A Backdrop Provider To Add Backdrop Easily From Anywhere */
 const BackdropContext = ({ children }: Props) => {
   const [isBackdropOpen, setIsBackdropOpen] = useState<BackdropStateType>({
     isOpen: false,

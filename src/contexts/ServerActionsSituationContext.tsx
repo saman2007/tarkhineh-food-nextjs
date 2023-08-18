@@ -3,22 +3,33 @@
 import { cloneDeep } from "@/utilities/helpers";
 import { createContext, useCallback, useState } from "react";
 
-type ServerActionsSituation = {
-  id: string;
+type Situation = {
+  /** Is your server action being executed right now?? */
   isLoading: boolean;
+  /** did your server action has error? */
   hasError: boolean;
-}[];
+};
+
+type ServerActionsSituation = ({
+  /** Unique id of server action situation */
+  id: string;
+} & Situation)[];
 
 type SubmitServerAction = (id: string) => void;
 
 type SetServerActionSituation = (
+  /** The unique id that you set for your server action situation */
   id: string,
-  situation: { isLoading?: boolean; hasError?: boolean }
+  /** The situation that you want to update */
+  situation: Partial<Situation>
 ) => void;
 
 interface ServerActionsSituationContextType {
+  /** All stored situations */
   situations: ServerActionsSituation;
+  /** A function to submit server action situation */
   submitServerAction: SubmitServerAction;
+  /** A function to set situation for currently stored server action situation */
   setServerActionSituation: SetServerActionSituation;
 }
 
@@ -26,7 +37,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-//a context that stores server action situations
+/* A context that stores server action situations */
 const serverActionsSituationContext =
   createContext<ServerActionsSituationContextType>({
     setServerActionSituation: (id, situation) => {},

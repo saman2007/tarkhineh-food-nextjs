@@ -1,0 +1,65 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Contexts/BackdropContext" />
+
+# BackdropContext
+
+## About
+
+A context to add backdrop from anywhere.
+
+## Values
+
+<Source code=
+{`
+type BackdropStateType = {
+  /** Is the backdrop open or not? */
+  isOpen: boolean;
+
+  /** If there are some classes that you want to add to backdrop, add them here */
+  className?: string;
+};
+`} />
+
+<Source code=
+{`
+{  
+  /** isBackdropOpen is state that the context use to display backdrop */
+  isBackdropOpen: BackdropStateType;
+
+  /** setState for isBackdropOpen state */
+  setIsBackdropOpen: Dispatch<SetStateAction<BackdropStateType>>;
+}
+`} />
+
+## Usage
+
+First wrap the contents that you want to display backdrop there with this context(main layout of this app is currently wrapped with this context),
+then use this context like the example below.
+
+<Source code=
+{` 
+import { backdropContext } from "@/contexts/BackdropContext";
+
+const MyComponent = () => {
+const backdropCTX = useContext(backdropContext);
+
+    const openHandler = () => {
+        backdropCTX.setIsBackdropOpen({
+            isOpen: true,
+            className: "md:blur-0 md:bg-[unset]",
+        });
+    };
+
+    const closeHandler = () => {
+        backdropCTX.setIsBackdropOpen({ isOpen: false });
+    };
+
+    return (
+        <div>
+            <button onClick={openHandler}>open the backdrop</button>
+            <button onClick={closeHandler}>close the backdrop</button>
+        </div>
+    );
+}
+`}/>
