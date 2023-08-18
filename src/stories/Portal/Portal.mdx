@@ -1,0 +1,34 @@
+import { Meta, Controls, ArgTypes, Source } from "@storybook/blocks";
+import Portal from "@/components/Portal/Portal";
+
+<Meta title="Components/Portal/Portal" />
+
+# Portal
+
+## About
+
+Sometimes you want to use React Portal for some reasons. You can use `React.createPortal` method. But there is an easier to create
+a portal for your elements. This way is to use `Portal` component. With `Portal`, you can easily create portal for your elements.
+
+## Props
+
+<ArgTypes of={Portal} />
+
+## How To Use?
+
+First of all, go and create the element that is the portal element and you want to add some elements in that using `Portal`. Add a
+unique `id` to that. Then use the `Portal` component like this:
+
+<Source
+  code={`
+    <div id="portal-in-somewhere"></div>
+  `}
+/>
+<Source
+  code={`
+    <Portal portalId="portal-in-somewhere">
+        <h1>Hello!</h1>
+        <h2>Am I in a Portal?</h2>
+    </Portal>
+  `}
+/>
