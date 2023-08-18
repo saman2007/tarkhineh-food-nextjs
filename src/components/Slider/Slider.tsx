@@ -6,9 +6,11 @@ import { ArrowLeft2, ArrowRight2 } from "iconsax-react";
 import "swiper/css";
 
 interface Props extends SwiperProps {
+  /** an array of elements that are the slides of slider */
   slides: React.ReactNode[];
 }
 
+/** a slider component that accepts swiper props and slides */
 const Slider = ({ slides, ...props }: Props) => {
   return (
     <Swiper
