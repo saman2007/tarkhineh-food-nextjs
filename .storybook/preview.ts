@@ -37,6 +37,11 @@ const AVAILABLE_VIEWPORTS = {
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ["Intro", "*"],
+      },
+    },
     backgrounds: {
       values: [
         { name: "night", value: "#000" },

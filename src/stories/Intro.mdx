@@ -1,0 +1,84 @@
+import { Meta, Source } from "@storybook/blocks";
+
+<Meta title="Introduction/Intro" />
+
+# Introduction
+
+Welcome to the documentation of tarkhineh project, a food selling website with next js `13.4`. In this document that is written with `storybook`, you can find
+the explanation of each reusable components, helper functions, contexts and custom hooks.
+
+## How To Run The Project On My Local?
+
+First of all, [clone this project from github](https://github.com/saman2007/tarkhineh-food-nextjs.git). Then open a terminal for the root of the project.
+Then install all of the packages by entering one of the below commands:
+
+<Source
+  code={`
+pnpm i
+`}
+/>
+
+<Source
+  code={`
+yarn install
+`}
+/>
+
+<Source
+  code={`
+npm i
+`}
+/>
+
+The next step is to initialize the database of this project. Im using `MySQL` as database of this project. So you need to create a database in `MySQL` at first.
+To initialize the database of this project, first of all [go to this route](https://github.com/saman2007/tarkhineh-food-nextjs/tree/master/src/lib/initialize)
+in your cloned project. In this folder, there are all queries to create required tables of this project. Make sure to run all of the initialize table queries
+to create the required tables. After you initialized required tables, create a `.env.local` in the root of the project and place the below env variables
+to make the database work:
+
+<Source
+  code={`
+DBHOST = #Your database host
+DBPORT = #Your database port 
+DBUSER = #The username of database
+DBPASSWORD = #The password of your database
+DATABASENAME = #The name of your database
+`}
+/>
+
+After that, your done! now to run the project on your localhost, enter one of these commands:
+
+<Source
+  code={`
+pnpm run dev
+`}
+/>
+
+<Source
+  code={`
+yarn run dev
+`}
+/>
+
+<Source
+  code={`
+npm run dev
+`}
+/>
+
+## Contribution
+
+I have been developing this project in my free times and because of it, the developing speed of this project is slow.
+If you want to grow this project and develop this project faster, feel free to contribute with me in this project!
+
+## Contacts
+
+You can contact me with these ways:
+
+- [LINKEDIN](https://www.linkedin.com/in/saman-ahrari-440147235)
+- [TELEGRAM](https://t.me/Samii_Dev)
+- samanahrari@yahoo.com
+
+## Github
+
+The github repo of this project is: [https://github.com/saman2007/tarkhineh-food-nextjs](https://github.com/saman2007/tarkhineh-food-nextjs)
