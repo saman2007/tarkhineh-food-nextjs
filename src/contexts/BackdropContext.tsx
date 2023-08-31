@@ -1,5 +1,6 @@
 "use client";
 
+import Backdrop from "@/components/Backdrop/Backdrop";
 import React, {
   Dispatch,
   SetStateAction,
@@ -12,6 +13,8 @@ type BackdropStateType = {
   isOpen: boolean;
   /** If there are some classes that you want to add to backdrop, add them here */
   className?: string;
+  /** onClick handler for when user clicks on backdrop */
+  onClick?: () => void;
 };
 
 interface BackdropContextType {
@@ -43,14 +46,10 @@ const BackdropContext = ({ children }: Props) => {
 
   return (
     <backdropContext.Provider value={contextValue}>
-      <div
-        className={`fixed right-0 left-0 z-[15] transition bg-[#00000099] duration-200 backdrop-blur-[3px] top-0 bottom-0 ${
-          isBackdropOpen.isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        } ${isBackdropOpen.className}`}
-        style={{ transform: "translate3d(0, 0, 0)" }}
-      ></div>
+      <Backdrop
+        isOpen={isBackdropOpen.isOpen}
+        onClick={isBackdropOpen.onClick}
+      />
       {children}
     </backdropContext.Provider>
   );

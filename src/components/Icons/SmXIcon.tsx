@@ -1,7 +1,7 @@
 import { SVG } from "@/types/types";
 import { FC } from "react";
 
-const XIcon: FC<SVG> = (props) => {
+const XIcon: FC<SVG> = ({ fill = "#fff", ...props }) => {
   return (
     <svg
       width={24}
@@ -18,7 +18,7 @@ const XIcon: FC<SVG> = (props) => {
         height={16}
         rx={1}
         transform="rotate(-45 5.31348 7.41406)"
-        fill="white"
+        fill={fill}
       />
       <rect
         x={16.3135}
@@ -27,7 +27,7 @@ const XIcon: FC<SVG> = (props) => {
         height={16}
         rx={1}
         transform="rotate(45 16.3135 6)"
-        fill="white"
+        fill={fill}
       />
     </svg>
   );

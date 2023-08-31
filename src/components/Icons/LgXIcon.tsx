@@ -1,7 +1,7 @@
 import { SVG } from "@/types/types";
 import { FC } from "react";
 
-const LgXIcon: FC<SVG> = (props) => (
+const LgXIcon: FC<SVG> = ({ fill = "#fff", ...props }) => (
   <svg
     width={40}
     height={40}
@@ -15,14 +15,14 @@ const LgXIcon: FC<SVG> = (props) => (
       height={29.8089}
       rx={1.86305}
       transform="matrix(0.698447 -0.715662 0.698447 0.715662 8.45508 11.6667)"
-      fill="#fff"
+      fill={fill}
     />
     <rect
       width={3.72611}
       height={29.8089}
       rx={1.86305}
       transform="matrix(0.698447 0.715662 -0.698447 0.715662 28.6973 9.00049)"
-      fill="#fff"
+      fill={fill}
     />
   </svg>
 );
