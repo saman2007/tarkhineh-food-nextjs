@@ -2,12 +2,19 @@ import { AnimatePresence, motion } from "framer-motion";
 import { MouseEventHandler } from "react";
 
 interface Props {
+  /** Children of Backdrop component */
   children?: React.ReactNode;
+  /** An onClick handler for backdrop */
   onClick?: MouseEventHandler<HTMLDivElement>;
+  /** Is backdrop open? */
   isOpen: boolean;
+  /** Extra classes for backdrop component */
   className?: string;
 }
 
+/**
+ * Backdrop Component To Display Black Layout behind elements
+ */
 const Backdrop = ({ children, onClick, isOpen, className = "" }: Props) => {
   return (
     <AnimatePresence>

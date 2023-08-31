@@ -1,6 +1,6 @@
 "use client";
 
-import { Dispatch, SetStateAction, useCallback, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import LgXIcon from "../Icons/LgXIcon";
 import { motion } from "framer-motion";
 import Portal from "../Portal/Portal";
@@ -8,13 +8,21 @@ import XIcon from "../Icons/SmXIcon";
 import Backdrop from "../Backdrop/Backdrop";
 
 interface Props {
+  /** Sometimes modal has a header with title. You can set that title here */
   title?: string;
+  /** Is modal open? */
   isOpen: boolean;
+  /** setState function to close modal */
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+  /** Classes for the element that is the container of Modal children */
   contentContainerClasses?: string;
+  /** Elements that you want to place in content of modal */
   children: React.ReactNode;
 }
 
+/**
+ * A Reusable Modal Component That Can Be Used Everywhere
+ */
 const Modal = ({
   title,
   isOpen,
@@ -22,12 +30,13 @@ const Modal = ({
   contentContainerClasses = "",
   children,
 }: Props) => {
-  const closeModalHandler = useCallback(() => {
+  const closeModalHandler = () => {
     setIsOpen(false);
-  }, [setIsOpen]);
+  };
 
   useEffect(() => {
     if (isOpen) {
+      //There should be no scroll in body tag after user opened modal
       document.body.style.overflow = "hidden";
     }
 
@@ -39,7 +48,7 @@ const Modal = ({
 
       document.body.style.overflow = "auto";
     };
-  }, [isOpen, closeModalHandler]);
+  }, [isOpen]);
 
   return (
     <Portal portalId="modal-root">
