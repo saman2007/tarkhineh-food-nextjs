@@ -1,6 +1,4 @@
-import LinkButton from "@/components/LinkButton/LinkButton";
-import Responsive from "@/components/Responsive/Responsive";
-import { ArrowLeft2 } from "iconsax-react";
+import ChooseBranch from "./ChooseBranch/ChooseBranch";
 
 const RightSection = () => {
   return (
@@ -15,36 +13,7 @@ const RightSection = () => {
         طراحی مدرن در کنار طبیعتی دلنواز، غذایی سالم و درخور شان شما عزیزان
         ارائه دهیم.
       </p>
-      <div className="mt-[8px] sd:mt-[16px] flex justify-end">
-        <Responsive md lg fullLg>
-          <LinkButton
-            href={"/about-us"}
-            variant="outline"
-            radiusVariant={4}
-            width={184}
-            height={40}
-            fontVariant="captionMdAndBtnLg"
-            className="gap-x-[8px]"
-            colorVariant="primary"
-          >
-            اطلاعات بیشتر
-            <ArrowLeft2 size={24} />
-          </LinkButton>
-        </Responsive>
-        <Responsive sm sd>
-          <LinkButton
-            href={"/about-us"}
-            variant="outline"
-            radiusVariant={4}
-            width={152}
-            height={32}
-            fontVariant="captionMdAndBtnLg"
-            colorVariant="primary"
-          >
-            اطلاعات بیشتر
-          </LinkButton>
-        </Responsive>
-      </div>
+      <ChooseBranch />
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Backdrop = ({ children, onClick, isOpen, className = "" }: Props) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
           onClick={onClick}
-          className={`fixed right-0 left-0 z-[15] transform-gpu bg-[#00000099] backdrop-blur-[3px] top-0 bottom-0 ${
+          className={`fixed right-0 left-0 z-[15] transform-gpu bg-[#00000099] top-0 bottom-0 ${
             isOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"

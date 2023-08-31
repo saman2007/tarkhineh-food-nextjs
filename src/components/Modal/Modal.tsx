@@ -1,14 +1,6 @@
 "use client";
 
-import { backdropContext } from "@/contexts/BackdropContext";
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-} from "react";
+import { Dispatch, SetStateAction, useCallback, useEffect } from "react";
 import LgXIcon from "../Icons/LgXIcon";
 import { motion } from "framer-motion";
 import Portal from "../Portal/Portal";
@@ -30,8 +22,6 @@ const Modal = ({
   contentContainerClasses = "",
   children,
 }: Props) => {
-  const modalRef = useRef<HTMLDivElement>(null);
-
   const closeModalHandler = useCallback(() => {
     setIsOpen(false);
   }, [setIsOpen]);
@@ -55,44 +45,40 @@ const Modal = ({
     <Portal portalId="modal-root">
       <Backdrop
         isOpen={isOpen}
-        className="z-50 p-20 flex justify-center items-center"
-        onClick={(e) => {
-          const clickedTarget = e.target as HTMLDivElement;
-
-          if (clickedTarget.contains(modalRef.current)) {
-            closeModalHandler();
-          }
-        }}
+        className="z-50 p-20 overflow-y-auto flex"
+        onClick={closeModalHandler}
       >
         {isOpen && (
           <motion.div
-            transition={{ duration: 0.1 }}
+            onClick={(e) => e.stopPropagation()}
+            transition={{ duration: 0.2 }}
             initial={{ opacity: 0, top: -100 }}
             animate={{ opacity: isOpen ? 1 : 0, top: "unset" }}
-            exit={{ opacity: 0, top: -50 }}
-            className="p-24 rounded-8 bg-white max-w-[808px] w-full pointer-events-auto origin-center relative"
-            ref={modalRef}
+            exit={{ opacity: 0, top: -100 }}
+            className=" rounded-8 bg-white overflow-hidden max-w-[808px] m-auto w-full pointer-events-auto origin-center relative"
           >
-            <div className="w-full flex items-center">
+            <div className="w-full p-16 flex items-center bg-gray-3">
               <div className="flex-grow">
                 {title && (
-                  <h2 className="m-auto w-fit font-header-7 sd:font-caption-lg">
+                  <h2 className="text-center sd:font-header-7 font-caption-lg">
                     {title}
                   </h2>
                 )}
               </div>
               <LgXIcon
                 fill="#717171"
-                className="cursor-pointer sd:hidden"
+                className="cursor-pointer sd:block hidden"
                 onClick={closeModalHandler}
               />
               <XIcon
                 fill="#717171"
-                className="cursor-pointer sd:block hidden"
+                className="cursor-pointer sd:hidden"
                 onClick={closeModalHandler}
               />
             </div>
-            <div className={`w-full ${contentContainerClasses}`}>
+            <div
+              className={`w-full p-16 pt-0 sd:p-24 ${contentContainerClasses}`}
+            >
               {children}
             </div>
           </motion.div>

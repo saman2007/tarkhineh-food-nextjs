@@ -25,7 +25,7 @@ export default function RootLayout({
       dir="rtl"
       className={`${optimizedFonts.variable} w-full h-full`}
     >
-      <body className="font-estedad font-body-sm sm:font-body-md md:font-body-lg lg:font-body-xl w-full h-full">
+      <body className="font-estedad font-body-sm sd:font-body-lg w-full h-full">
         <div id="modal-root"></div>
         <ServerActionsSituationContext>
           <BackdropContext>
