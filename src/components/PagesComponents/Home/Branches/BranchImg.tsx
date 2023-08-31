@@ -21,10 +21,10 @@ const BranchImg = ({ alt, largeImg, smallImg }: Props) => {
         className="w-full relative h-[230px] hidden sd:block"
         variants={variant}
       >
-        <Image alt={alt} src={largeImg} fill />
+        <Image alt={alt} src={largeImg} fill quality={100} />
       </motion.div>
       <div className="w-[144px] h-full relative sd:hidden shrink-0">
-        <Image alt={alt} src={smallImg} fill />
+        <Image alt={alt} src={smallImg} fill quality={100} />
       </div>
     </>
   );

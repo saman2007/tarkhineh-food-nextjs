@@ -15,6 +15,7 @@ const TextFieldUI = forwardRef<HTMLInputElement, TextFieldUIProps>(
       displayError = false,
       floatPlaceholder = false,
       isRHF = false,
+      watch,
       ...props
     }: TextFieldUIProps,
     ref: Ref<HTMLInputElement>

@@ -80,6 +80,8 @@ export interface TextFieldUIProps
     FloatPlaceholder {
   /** possible types of text field */
   type?: "password" | "text";
+  /** watch is watch method from useForm. if your using FormRHF, it will be passed automatically */
+  watch?: UseFormWatch<FieldValues>;
 }
 
 export interface FormRHFProps {
