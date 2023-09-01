@@ -8,7 +8,7 @@ const meta: Meta<typeof Backdrop> = {
   tags: ["autodocs"],
   title: "Components/Backdrop",
   args: {
-    className: "min-h-[200px] flex",
+    className: "flex",
     onClick: () => {
       console.log("hello :)");
     },
@@ -18,6 +18,7 @@ const meta: Meta<typeof Backdrop> = {
       </h1>
     ),
   },
+  decorators: [(storyFn) => <div className="h-[300px]">{storyFn()}</div>],
 };
 
 const BackdropExample: Story = {};
