@@ -47,6 +47,7 @@ const SearchModal = ({
             height={40}
             width="100%"
             variant="secondary"
+            containerWidth="100%"
             iconLeft={
               <Button type="submit">
                 <SearchNormal1

@@ -8,7 +8,7 @@ export const variants = {
       success: "border-success border-2 border-solid",
     },
     inputClasses:
-      "bg-transparent rounded-8 font-body-sm text-gray-1 placeholder:text-gray-1",
+      "bg-transparent rounded-8 font-body-sm text-gray-1",
     padding: "py-12 px-16",
     errorTextClasses: "text-error-extra-light",
   },
@@ -19,7 +19,7 @@ export const variants = {
       success: "border-success border border-solid",
     },
     inputClasses:
-      "bg-white rounded-8 font-body-sm text-gray-8 placeholder:text-gray-8",
+      "bg-transparent rounded-8 font-body-sm text-gray-8",
     padding: "py-8 px-16",
     errorTextClasses: "text-error",
   },

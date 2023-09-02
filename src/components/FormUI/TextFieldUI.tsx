@@ -2,7 +2,7 @@ import { variants } from "@/data/variants/FormUIs";
 import { TextFieldUIProps } from "@/global/interfaces/interfaces";
 import { Ref, forwardRef } from "react";
 
-/** A TextField UI component without validation */
+/** A TextField UI Component Without Validation */
 const TextFieldUI = forwardRef<HTMLInputElement, TextFieldUIProps>(
   (
     {
@@ -19,20 +19,34 @@ const TextFieldUI = forwardRef<HTMLInputElement, TextFieldUIProps>(
       watch,
       borderVariant = "normal",
       iconLeft,
+      containerWidth = "fit-content",
+      containerHeight = "fit-content",
       ...props
     }: TextFieldUIProps,
     ref: Ref<HTMLInputElement>
   ) => {
     const selectedVariant = variants[variant];
 
+    const containerSize = {
+      height:
+        typeof containerHeight === "number"
+          ? containerHeight + "px"
+          : containerHeight,
+      width:
+        typeof containerWidth === "number"
+          ? containerWidth + "px"
+          : containerWidth,
+    };
+
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col" style={containerSize}>
         <div
           className={`flex relative ${selectedVariant.inputClasses} ${selectedVariant.border[borderVariant]}`}
+          style={containerSize}
         >
           <input
             type={type}
-            className={`outline-none bg-transparent transition duration-200 float-placeholder-input-parent ${className} ${
+            className={`outline-none bg-transparent transition duration-200 float-placeholder-input-parent placeholder:text-[inherit] ${className} ${
               selectedVariant.padding
             } ${iconLeft ? "pl-0" : ""}`}
             style={{

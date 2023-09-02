@@ -4,7 +4,7 @@ import { variants } from "@/data/variants/FormUIs";
 import { TextAreaUIProps } from "@/global/interfaces/interfaces";
 import { Ref, forwardRef, useState } from "react";
 
-/** a TextArea UI component without validation */
+/** A TextArea UI Component Without Validation */
 export const TextAreaUI = forwardRef<HTMLTextAreaElement, TextAreaUIProps>(
   (
     {

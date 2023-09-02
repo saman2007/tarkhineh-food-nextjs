@@ -9,6 +9,7 @@ const FooterFormCol = () => {
       <div className="flex flex-col gap-y-[4px]">
         <div className="w-[286px] md:w-[276px]">
           <TextField
+            containerWidth="100%"
             width="100%"
             height={40}
             placeholder="نام و نام خانوادگی"
@@ -18,6 +19,7 @@ const FooterFormCol = () => {
         </div>
         <div className="w-[286px] md:w-[276px]">
           <TextField
+            containerWidth="100%"
             width="100%"
             height={40}
             placeholder="شماره تماس"
@@ -27,6 +29,7 @@ const FooterFormCol = () => {
         </div>
         <div className="w-[286px] md:w-[276px]">
           <TextField
+            containerWidth="100%"
             width="100%"
             height={40}
             placeholder="آدرس ایمیل (اختیاری)"
