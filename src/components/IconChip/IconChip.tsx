@@ -1,14 +1,19 @@
 import { SVG } from "@/global/types/types";
 
 interface Props {
-  /** a SVG react element */
+  /** A SVG react element */
   children: React.ReactElement<SVG>;
+  /** onClick event handler */
+  onClick?: () => void;
 }
 
-/** an icon chip component */
-const IconChip = ({ children }: Props) => {
+/** An Icon Chip Component */
+const IconChip = ({ children, onClick }: Props) => {
   return (
-    <div className="bg-tint-1 cursor-pointer hover:bg-tint-2 transition duration-200 p-8 rounded-4 w-fit">
+    <div
+      onClick={onClick}
+      className="bg-tint-1 cursor-pointer hover:bg-tint-2 transition duration-200 p-8 rounded-4 w-fit"
+    >
       {children}
     </div>
   );

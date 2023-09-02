@@ -1,37 +1,10 @@
-import { User, ShoppingCart, SearchNormal1 } from "iconsax-react";
-import IconChip from "../IconChip/IconChip";
 import Container from "../Container/Container";
 import HeaderText from "./HeaderText/HeaderText";
 import Logo from "./Logo/Logo";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
 import { desktopMenuData } from "@/data/headerData";
 import Link from "@/components/Link/Link";
-import { SVG } from "@/global/types/types";
-
-type IconChipType = { icon: React.ReactElement<SVG>; hideOnMd?: boolean }[];
-
-const iconChips: IconChipType = [
-  {
-    icon: <SearchNormal1 size={24} className="text-primary" />,
-    hideOnMd: true,
-  },
-  {
-    icon: (
-      <ShoppingCart
-        size={24}
-        className="text-primary w-[16px] sd:w-[unset] h-[16px] sd:h-[unset]"
-      />
-    ),
-  },
-  {
-    icon: (
-      <User
-        size={24}
-        className="text-primary w-[16px] sd:w-[unset] h-[16px] sd:h-[unset]"
-      />
-    ),
-  },
-];
+import IconChips from "./IconChips/IconChips";
 
 const Header = () => {
   return (
@@ -49,13 +22,7 @@ const Header = () => {
             <HeaderText key={key} {...data} />
           ))}
         </div>
-        <div className="gap-x-[8px] flex">
-          {iconChips.map(({ icon, hideOnMd }, index) => (
-            <div key={index} className={`${hideOnMd ? "hidden md:block" : ""}`}>
-              <IconChip>{icon}</IconChip>
-            </div>
-          ))}
-        </div>
+        <IconChips />
       </Container>
     </header>
   );

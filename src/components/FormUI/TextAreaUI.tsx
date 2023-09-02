@@ -1,6 +1,6 @@
 "use client";
 
-import { borderVariants } from "@/data/variants/FormUIs";
+import { variants } from "@/data/variants/FormUIs";
 import { TextAreaUIProps } from "@/global/interfaces/interfaces";
 import { Ref, forwardRef, useState } from "react";
 
@@ -21,6 +21,7 @@ export const TextAreaUI = forwardRef<HTMLTextAreaElement, TextAreaUIProps>(
       showLengthCounter = false,
       isRHF = false,
       watch,
+      variant = "primary",
       ...props
     }: TextAreaUIProps,
     ref: Ref<HTMLTextAreaElement>
@@ -28,11 +29,13 @@ export const TextAreaUI = forwardRef<HTMLTextAreaElement, TextAreaUIProps>(
     const valueRHF: string | undefined = isRHF && watch?.(props.name || "");
     const [value, setValue] = useState<string>("");
 
+    const selectedVariant = variants[variant];
+
     return (
       <div className="flex flex-col">
         <div className="relative flex w-fit">
           <textarea
-            className={`p-16 bg-transparent outline-none transition duration-200 font-body-sm text-gray-1 placeholder:text-gray-1 float-placeholder-textarea-parent rounded-8 ${className} ${borderVariants[borderVariant]}`}
+            className={`p-16 outline-none transition duration-200 float-placeholder-textarea-parent ${className} ${selectedVariant.inputClasses} ${selectedVariant.border[borderVariant]}`}
             placeholder={floatPlaceholder ? " " : placeholder}
             style={{
               resize: resize,

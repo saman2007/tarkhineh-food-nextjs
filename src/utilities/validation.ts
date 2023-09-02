@@ -6,3 +6,7 @@ export const submitUserMessageSchema = yup.object().shape({
   email: yup.string().email().notRequired(),
   message: yup.string().min(30).required(),
 });
+
+export const searchValidation = yup.object().shape({
+  searchText: yup.string().required(),
+});

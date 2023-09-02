@@ -4,7 +4,10 @@ import {
   radiusVariants,
   variants,
 } from "@/data/variants/Button";
-import { borderVariants } from "@/data/variants/FormUIs";
+import {
+  BorderVariants,
+  variants as formUiVariants,
+} from "@/data/variants/FormUIs";
 import { LinkProps } from "next/link";
 import {
   DetailedHTMLProps,
@@ -15,15 +18,15 @@ import { FieldValues, UseFormWatch } from "react-hook-form";
 
 export interface ButtonProps<T extends keyof typeof variants>
   extends SizeStyles {
-  /** the main variant of component*/
+  /** The main variant of component*/
   variant?: T;
-  /** each main variant has some color variants and you can set the color variant of a main variant here  */
+  /** Each main variant has some color variants and you can set the color variant of a main variant here  */
   colorVariant?: keyof (typeof colorVariants)[T];
-  /** a number that will be in use in border-radius of button  */
+  /** A number that will be in use in border-radius of button  */
   radiusVariant?: keyof typeof radiusVariants;
-  /** fonts that are available for Button component. */
+  /** Fonts that are available for Button component. */
   fontVariant?: keyof typeof fontVariants;
-  /** the state of loading in button. if it is true, a loading spinner will be displayed at the center of button instead of displaying children */
+  /** The state of loading in button. if it is true, a loading spinner will be displayed at the center of button instead of displaying children */
   isLoading?: boolean;
 }
 
@@ -32,28 +35,29 @@ export interface CustomLinkProps
     Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> {}
 
 export interface SizeStyles {
-  /** height of element. if it is number, it will be concatinated with px, else it will be used itself */
+  /** Height of element. if it is number, it will be concatinated with px, else it will be used itself */
   height?: string | number;
-  /** width of element. if it is number, it will be concatinated with px, else it will be used itself */
+  /** Width of element. if it is number, it will be concatinated with px, else it will be used itself */
   width?: string | number;
 }
 
 export interface FormUI extends SizeStyles {
-  /** each form UI has different border variants to display situation of entered data */
-  borderVariant?: keyof typeof borderVariants;
-  /** to use some functionalities that need react hook form, it must be true(it is true inside FormRHF by default)  */
+  variant?: keyof typeof formUiVariants;
+  /** To use some functionalities that need react hook form, it must be true(it is true inside FormRHF by default)  */
   isRHF?: boolean;
+  /** Each form UI has different border variants to display situation of entered data */
+  borderVariant?: BorderVariants;
 }
 
 export interface FormUIError {
-  /** error message of form input */
+  /** Error message of form input */
   error?: string | undefined;
-  /** if error element that has error string as children must be displayed by defalt even that textarea doesnt have any error, this option must be true  */
+  /** If error element that has error string as children must be displayed by defalt even that textarea doesnt have any error, this option must be true  */
   displayError?: boolean;
 }
 
 export interface FloatPlaceholder {
-  /** if you want to move placeholder of input to above of it when user focused the input or wrote anything in input, this option must be true */
+  /** If you want to move placeholder of input to above of it when user focused the input or wrote anything in input, this option must be true */
   floatPlaceholder?: boolean;
 }
 
@@ -65,11 +69,11 @@ export interface TextAreaUIProps
     FormUI,
     FormUIError,
     FloatPlaceholder {
-  /** resize attribute of textarea */
+  /** Eesize attribute of textarea */
   resize?: "none" | "both" | "horizontal" | "vertical" | "block" | "inline";
-  /** if you want to display the length of entered string this option must be true */
+  /** If you want to display the length of entered string this option must be true */
   showLengthCounter?: boolean;
-  /** watch is watch method from useForm. if your using FormRHF, it will be passed automatically */
+  /** Watch is watch method from useForm. if your using FormRHF, it will be passed automatically */
   watch?: UseFormWatch<FieldValues>;
 }
 
@@ -78,13 +82,15 @@ export interface TextFieldUIProps
     DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
     FormUIError,
     FloatPlaceholder {
-  /** possible types of text field */
+  /** Possible types of text field */
   type?: "password" | "text";
-  /** watch is watch method from useForm. if your using FormRHF, it will be passed automatically */
+  /** Watch is watch method from useForm. if your using FormRHF, it will be passed automatically */
   watch?: UseFormWatch<FieldValues>;
+  /** The icon that must be diplayed at the left side of text field */
+  iconLeft?: React.ReactNode;
 }
 
 export interface FormRHFProps {
-  /** name is actually the name of validation key in yup validation and react hook form uses it */
+  /** Name is actually the name of validation key in yup validation and react hook form uses it */
   name: string;
 }
