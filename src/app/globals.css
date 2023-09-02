@@ -104,3 +104,22 @@
 .docs-story {
     direction: rtl;
 }
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #CBCBCB;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #717171;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #828282;
+}
