@@ -10,7 +10,6 @@ import {
   ABOUT_US_ROUTE,
   APPETIZER_MENU_ROUTE,
   BEVERAGE_MENU_ROUTE,
-  BRANCHES_ROUTE,
   CHALOOS_BRANCH_ROUTE,
   CONTACT_US_ROUTE,
   DESSERT_MENU_ROUTE,
@@ -19,17 +18,16 @@ import {
   GETTING_AGENCY_ROUTE,
   HOME_ROUTE,
   MAIN_FOOD_MENU_ROUTE,
-  MENU_ROUTE,
   VANAK_BRANCH_ROUTE,
 } from "./routes";
 
-type Link = { text: string; href: string };
+type Link = { text: string; href?: string };
 type SubMenu =
   | {
       hasSubMenu: true;
       subMenus: { text: string; href: string }[];
     }
-  | { hasSubMenu?: never; subMenus?: never };
+  | { hasSubMenu?: never; subMenus?: never; href: string };
 
 export type HeaderTextData = Link & SubMenu;
 
@@ -90,7 +88,6 @@ export const desktopMenuData: HeaderTextData[] = [
   },
   {
     text: "شعبه",
-    href: BRANCHES_ROUTE,
     subMenus: [
       { text: "شعبه ونک", href: VANAK_BRANCH_ROUTE },
       { text: "شعبه اقدسیه", href: EGHDISIYE_BRANCH_ROUTE },
@@ -101,7 +98,6 @@ export const desktopMenuData: HeaderTextData[] = [
   },
   {
     text: "منو",
-    href: MENU_ROUTE,
     subMenus: [
       { text: "غذای اصلی", href: MAIN_FOOD_MENU_ROUTE },
       { text: "پیش غذا", href: APPETIZER_MENU_ROUTE },

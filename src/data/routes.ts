@@ -1,10 +1,8 @@
 export const HOME_ROUTE: string = "/";
-export const MENU_ROUTE: string = "/menu";
 export const MAIN_FOOD_MENU_ROUTE: string = "/menu/main-food";
 export const APPETIZER_MENU_ROUTE: string = "/menu/main-food";
 export const DESSERT_MENU_ROUTE: string = "/menu/dessert";
 export const BEVERAGE_MENU_ROUTE: string = "/menu/beverage";
-export const BRANCHES_ROUTE: string = "/branches";
 export const VANAK_BRANCH_ROUTE: string = "/branches/vanak";
 export const EGHDISIYE_BRANCH_ROUTE: string = "/branches/eghdisiye";
 export const CHALOOS_BRANCH_ROUTE: string = "/branches/chaloos";
