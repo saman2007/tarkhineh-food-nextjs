@@ -19,46 +19,34 @@ const TextFieldUI = forwardRef<HTMLInputElement, TextFieldUIProps>(
       watch,
       borderVariant = "normal",
       iconLeft,
-      containerWidth = "fit-content",
-      containerHeight = "fit-content",
       ...props
     }: TextFieldUIProps,
     ref: Ref<HTMLInputElement>
   ) => {
     const selectedVariant = variants[variant];
 
-    const containerSize = {
-      height:
-        typeof containerHeight === "number"
-          ? containerHeight + "px"
-          : containerHeight,
-      width:
-        typeof containerWidth === "number"
-          ? containerWidth + "px"
-          : containerWidth,
-    };
-
     return (
-      <div className="flex flex-col" style={containerSize}>
+      <div className="flex flex-col">
         <div
           className={`flex relative ${selectedVariant.inputClasses} ${selectedVariant.border[borderVariant]}`}
-          style={containerSize}
+          style={{
+            height: typeof height === "number" ? height + "px" : height,
+            width: typeof width === "number" ? width + "px" : width,
+          }}
         >
           <input
             type={type}
-            className={`outline-none bg-transparent transition duration-200 float-placeholder-input-parent placeholder:text-[inherit] ${className} ${
+            className={`outline-none w-full h-full bg-transparent transition duration-200 float-placeholder-input-parent placeholder:text-[inherit] ${className} ${
               selectedVariant.padding
-            } ${iconLeft ? "pl-0" : ""}`}
-            style={{
-              height: typeof height === "number" ? height + "px" : height,
-              width: typeof width === "number" ? width + "px" : width,
-            }}
+            } ${iconLeft ? "pl-0" : ""} ${selectedVariant.color}`}
             placeholder={floatPlaceholder ? " " : placeholder}
             ref={ref}
             {...props}
           />
           {floatPlaceholder && (
-            <span className="absolute top-[8px] font-body-sm right-[16px] text-gray-1 pointer-events-none transition-all duration-200">
+            <span
+              className={`absolute top-[5px] font-body-sm right-[16px] pointer-events-none transition-all duration-200 ${selectedVariant.color}`}
+            >
               {placeholder}
             </span>
           )}

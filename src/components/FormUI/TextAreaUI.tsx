@@ -35,7 +35,7 @@ export const TextAreaUI = forwardRef<HTMLTextAreaElement, TextAreaUIProps>(
       <div className="flex flex-col">
         <div className="relative flex w-fit">
           <textarea
-            className={`p-16 outline-none transition duration-200 float-placeholder-textarea-parent ${className} ${selectedVariant.inputClasses} ${selectedVariant.border[borderVariant]}`}
+            className={`p-16 outline-none transition duration-200 float-placeholder-input-parent ${className} ${selectedVariant.inputClasses} ${selectedVariant.border[borderVariant]} ${selectedVariant.color}`}
             placeholder={floatPlaceholder ? " " : placeholder}
             style={{
               resize: resize,
@@ -50,7 +50,9 @@ export const TextAreaUI = forwardRef<HTMLTextAreaElement, TextAreaUIProps>(
             }}
           ></textarea>
           {floatPlaceholder && (
-            <span className="absolute top-[16px] font-body-sm right-[16px] text-gray-1 pointer-events-none transition-all duration-200 float-placeholder">
+            <span
+              className={`absolute top-[8px] font-body-sm right-[16px] pointer-events-none transition-all duration-200 float-placeholder ${selectedVariant.color}`}
+            >
               {placeholder}
             </span>
           )}

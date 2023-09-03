@@ -88,10 +88,6 @@ export interface TextFieldUIProps
   watch?: UseFormWatch<FieldValues>;
   /** The icon that must be diplayed at the left side of text field */
   iconLeft?: React.ReactNode;
-  /** Field has two container. With this, you can specify width of them */
-  containerWidth?: SizeStyles["width"];
-  /** Field has two container. With this, you can specify height of them */
-  containerHeight?: SizeStyles["height"];
 }
 
 export interface FormRHFProps {
