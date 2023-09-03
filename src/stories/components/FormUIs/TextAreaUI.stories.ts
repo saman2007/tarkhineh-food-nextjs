@@ -16,6 +16,9 @@ const meta: Meta<typeof TextAreaUI> = {
     borderVariant: {
       control: "select",
     },
+    variant: {
+      control: "select",
+    },
   },
   args: {
     width: 200,
@@ -23,23 +26,22 @@ const meta: Meta<typeof TextAreaUI> = {
   },
 };
 
-const Normal: Story = {
+const Primary: Story = {
   args: {
-    borderVariant: "normal",
+    variant: "primary",
   },
 };
 
-const Success: Story = {
+const Secondary: Story = {
   args: {
-    borderVariant: "success",
+    variant: "secondary",
+  },
+  parameters: {
+    backgrounds: {
+      default: "light",
+    },
   },
 };
 
-const Error: Story = {
-  args: {
-    borderVariant: "error",
-  },
-};
-
-export { Normal, Success, Error };
+export { Primary, Secondary };
 export default meta;

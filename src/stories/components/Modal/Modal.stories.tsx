@@ -32,7 +32,6 @@ const meta: Meta<typeof Modal> = {
     title: "Modal Example",
     contentContainerClasses: "h-[400px] flex justify-center items-center",
     children: "some content",
-    mode: "storybook",
   },
   parameters: {
     docs: {
