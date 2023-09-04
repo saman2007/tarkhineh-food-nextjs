@@ -1,9 +1,10 @@
 import Slider from "@/components/Slider/Slider";
-import { getSliderSlidesQuery } from "@/lib/queries/home";
+import { getHomeSliderSlidesQuery } from "@/lib/queries/home";
 import HomeSlide from "./HomeSlide";
 
 const HomeSlider = async () => {
-  const slidesData = await getSliderSlidesQuery();
+  const slidesData = await getHomeSliderSlidesQuery();
+
   const slides = slidesData.map(({ id, ...props }) => (
     <HomeSlide key={id} {...props} />
   ));

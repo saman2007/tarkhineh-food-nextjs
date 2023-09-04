@@ -1,4 +1,4 @@
-CREATE TABLE `slides` (
+CREATE TABLE `slider_slides` (
   `id` int NOT NULL AUTO_INCREMENT,
   `text` tinytext NOT NULL,
   `image` text NOT NULL,
