@@ -1,5 +1,5 @@
 import LinkButton from "@/components/LinkButton/LinkButton";
-import { SliderData } from "@/lib/queries/home/interfaces";
+import { SliderData } from "@/lib/queries/global/interfaces";
 
 const HomeSlide = ({
   image,

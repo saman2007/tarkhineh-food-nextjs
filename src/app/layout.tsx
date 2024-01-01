@@ -36,7 +36,7 @@ export default function RootLayout({
               className="max-[480px]:!right-[10px] max-[480px]:!left-[10px] max-[480px]:!top-[10px] max-[480px]:!w-[unset]"
               toastClassName="max-[480px]:!rounded-4"
             />
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-between h-full">
               <div>
                 <Header />
                 <Spacer height={115} />
